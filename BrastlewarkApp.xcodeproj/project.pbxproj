@@ -13,6 +13,13 @@
 		5542E9B72131F7EA00DB113B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B62131F7EA00DB113B /* Assets.xcassets */; };
 		5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */; };
 		5542E9C52131F7EA00DB113B /* BrastlewarkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9C42131F7EA00DB113B /* BrastlewarkAppTests.swift */; };
+		5542E9D42131FBEC00DB113B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9D32131FBEC00DB113B /* Api.swift */; };
+		5542E9D62131FCD700DB113B /* RxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9D52131FCD700DB113B /* RxApi.swift */; };
+		5542E9D92131FE6400DB113B /* BrastlewarkApi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9D82131FE6400DB113B /* BrastlewarkApi.plist */; };
+		5542E9DB2131FF1100DB113B /* FetchPopulationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9DA2131FF1100DB113B /* FetchPopulationInteractor.swift */; };
+		5542E9DD2131FFD900DB113B /* BrastlewarkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9DC2131FFD900DB113B /* BrastlewarkApi.swift */; };
+		5542E9DF213200DD00DB113B /* Citizen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9DE213200DD00DB113B /* Citizen.swift */; };
+		5542E9E22132023700DB113B /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9E12132023700DB113B /* DictionaryHelper.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +45,13 @@
 		5542E9C02131F7EA00DB113B /* BrastlewarkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrastlewarkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9C42131F7EA00DB113B /* BrastlewarkAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrastlewarkAppTests.swift; sourceTree = "<group>"; };
 		5542E9C62131F7EA00DB113B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5542E9D32131FBEC00DB113B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		5542E9D52131FCD700DB113B /* RxApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxApi.swift; sourceTree = "<group>"; };
+		5542E9D82131FE6400DB113B /* BrastlewarkApi.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BrastlewarkApi.plist; sourceTree = "<group>"; };
+		5542E9DA2131FF1100DB113B /* FetchPopulationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopulationInteractor.swift; sourceTree = "<group>"; };
+		5542E9DC2131FFD900DB113B /* BrastlewarkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrastlewarkApi.swift; sourceTree = "<group>"; };
+		5542E9DE213200DD00DB113B /* Citizen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citizen.swift; sourceTree = "<group>"; };
+		5542E9E12132023700DB113B /* DictionaryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +106,12 @@
 		5542E9AE2131F7EA00DB113B /* BrastlewarkApp */ = {
 			isa = PBXGroup;
 			children = (
+				5542E9E02132022800DB113B /* Helpers */,
+				5542E9D72131FE4100DB113B /* Config */,
+				5542E9D22131FB9C00DB113B /* Scenes */,
+				5542E9D12131FB9200DB113B /* Entities */,
+				5542E9D02131FB8A00DB113B /* Interactors */,
+				5542E9CF2131FB7B00DB113B /* Api */,
 				5542E9AF2131F7EA00DB113B /* AppDelegate.swift */,
 				5542E9B12131F7EA00DB113B /* ViewController.swift */,
 				5542E9B32131F7EA00DB113B /* Main.storyboard */,
@@ -109,6 +129,55 @@
 				5542E9C62131F7EA00DB113B /* Info.plist */,
 			);
 			path = BrastlewarkAppTests;
+			sourceTree = "<group>";
+		};
+		5542E9CF2131FB7B00DB113B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9D32131FBEC00DB113B /* Api.swift */,
+				5542E9D52131FCD700DB113B /* RxApi.swift */,
+				5542E9DC2131FFD900DB113B /* BrastlewarkApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5542E9D02131FB8A00DB113B /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9DA2131FF1100DB113B /* FetchPopulationInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		5542E9D12131FB9200DB113B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9DE213200DD00DB113B /* Citizen.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5542E9D22131FB9C00DB113B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5542E9D72131FE4100DB113B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9D82131FE6400DB113B /* BrastlewarkApi.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5542E9E02132022800DB113B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9E12132023700DB113B /* DictionaryHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CD6A17BAE300435D0F132A25 /* Pods */ = {
@@ -207,6 +276,7 @@
 			files = (
 				5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */,
 				5542E9B72131F7EA00DB113B /* Assets.xcassets in Resources */,
+				5542E9D92131FE6400DB113B /* BrastlewarkApi.plist in Resources */,
 				5542E9B52131F7EA00DB113B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,8 +296,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -235,8 +303,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -252,15 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BrastlewarkApp-checkManifestLockResult.txt",
 			);
@@ -276,8 +338,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5542E9D42131FBEC00DB113B /* Api.swift in Sources */,
+				5542E9DF213200DD00DB113B /* Citizen.swift in Sources */,
 				5542E9B22131F7EA00DB113B /* ViewController.swift in Sources */,
+				5542E9D62131FCD700DB113B /* RxApi.swift in Sources */,
+				5542E9DD2131FFD900DB113B /* BrastlewarkApi.swift in Sources */,
+				5542E9DB2131FF1100DB113B /* FetchPopulationInteractor.swift in Sources */,
 				5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */,
+				5542E9E22132023700DB113B /* DictionaryHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
