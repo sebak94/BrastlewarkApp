@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9AF2131F7EA00DB113B /* AppDelegate.swift */; };
-		5542E9B22131F7EA00DB113B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9B12131F7EA00DB113B /* ViewController.swift */; };
-		5542E9B52131F7EA00DB113B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B32131F7EA00DB113B /* Main.storyboard */; };
 		5542E9B72131F7EA00DB113B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B62131F7EA00DB113B /* Assets.xcassets */; };
 		5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */; };
 		5542E9C52131F7EA00DB113B /* BrastlewarkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9C42131F7EA00DB113B /* BrastlewarkAppTests.swift */; };
@@ -20,6 +18,18 @@
 		5542E9DD2131FFD900DB113B /* BrastlewarkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9DC2131FFD900DB113B /* BrastlewarkApi.swift */; };
 		5542E9DF213200DD00DB113B /* Citizen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9DE213200DD00DB113B /* Citizen.swift */; };
 		5542E9E22132023700DB113B /* DictionaryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9E12132023700DB113B /* DictionaryHelper.swift */; };
+		5542E9E5213233C100DB113B /* CitizenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9E4213233C100DB113B /* CitizenRepository.swift */; };
+		5542E9EF2132373100DB113B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9E82132373000DB113B /* BaseNavigationController.swift */; };
+		5542E9F02132373100DB113B /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9E92132373100DB113B /* Navigation.swift */; };
+		5542E9F12132373100DB113B /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9EA2132373100DB113B /* Wireframe.swift */; };
+		5542E9F22132373100DB113B /* ObservableViewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9EC2132373100DB113B /* ObservableViewWireframe.swift */; };
+		5542E9F32132373100DB113B /* ObserverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9ED2132373100DB113B /* ObserverPresenter.swift */; };
+		5542E9F42132373100DB113B /* ObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9EE2132373100DB113B /* ObservableViewController.swift */; };
+		5542E9F6213238AB00DB113B /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9F5213238AB00DB113B /* SplashWireframe.swift */; };
+		5542E9F8213238B400DB113B /* SplashEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9F7213238B400DB113B /* SplashEventsHandler.swift */; };
+		5542E9FB213238C800DB113B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9F9213238C800DB113B /* SplashViewController.swift */; };
+		5542E9FC213238C800DB113B /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9FA213238C800DB113B /* SplashViewController.xib */; };
+		5542E9FF21323C3E00DB113B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9FE21323C3E00DB113B /* AppState.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +47,6 @@
 		206F06AC6B35692ADBF09C40 /* Pods-BrastlewarkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.release.xcconfig"; sourceTree = "<group>"; };
 		5542E9AC2131F7EA00DB113B /* BrastlewarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrastlewarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9AF2131F7EA00DB113B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5542E9B12131F7EA00DB113B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5542E9B42131F7EA00DB113B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5542E9B62131F7EA00DB113B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5542E9B92131F7EA00DB113B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5542E9BB2131F7EA00DB113B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +60,18 @@
 		5542E9DC2131FFD900DB113B /* BrastlewarkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrastlewarkApi.swift; sourceTree = "<group>"; };
 		5542E9DE213200DD00DB113B /* Citizen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Citizen.swift; sourceTree = "<group>"; };
 		5542E9E12132023700DB113B /* DictionaryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryHelper.swift; sourceTree = "<group>"; };
+		5542E9E4213233C100DB113B /* CitizenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenRepository.swift; sourceTree = "<group>"; };
+		5542E9E82132373000DB113B /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		5542E9E92132373100DB113B /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		5542E9EA2132373100DB113B /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		5542E9EC2132373100DB113B /* ObservableViewWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableViewWireframe.swift; sourceTree = "<group>"; };
+		5542E9ED2132373100DB113B /* ObserverPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverPresenter.swift; sourceTree = "<group>"; };
+		5542E9EE2132373100DB113B /* ObservableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableViewController.swift; sourceTree = "<group>"; };
+		5542E9F5213238AB00DB113B /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
+		5542E9F7213238B400DB113B /* SplashEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashEventsHandler.swift; sourceTree = "<group>"; };
+		5542E9F9213238C800DB113B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		5542E9FA213238C800DB113B /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		5542E9FE21323C3E00DB113B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +126,9 @@
 		5542E9AE2131F7EA00DB113B /* BrastlewarkApp */ = {
 			isa = PBXGroup;
 			children = (
+				5542E9FD21323C3300DB113B /* States */,
+				5542E9E7213235EA00DB113B /* Navigation */,
+				5542E9E3213233AB00DB113B /* Repositories */,
 				5542E9E02132022800DB113B /* Helpers */,
 				5542E9D72131FE4100DB113B /* Config */,
 				5542E9D22131FB9C00DB113B /* Scenes */,
@@ -113,8 +136,6 @@
 				5542E9D02131FB8A00DB113B /* Interactors */,
 				5542E9CF2131FB7B00DB113B /* Api */,
 				5542E9AF2131F7EA00DB113B /* AppDelegate.swift */,
-				5542E9B12131F7EA00DB113B /* ViewController.swift */,
-				5542E9B32131F7EA00DB113B /* Main.storyboard */,
 				5542E9B62131F7EA00DB113B /* Assets.xcassets */,
 				5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */,
 				5542E9BB2131F7EA00DB113B /* Info.plist */,
@@ -160,6 +181,7 @@
 		5542E9D22131FB9C00DB113B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5542E9E6213235CF00DB113B /* Splash */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -178,6 +200,54 @@
 				5542E9E12132023700DB113B /* DictionaryHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5542E9E3213233AB00DB113B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9E4213233C100DB113B /* CitizenRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5542E9E6213235CF00DB113B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9F5213238AB00DB113B /* SplashWireframe.swift */,
+				5542E9F7213238B400DB113B /* SplashEventsHandler.swift */,
+				5542E9F9213238C800DB113B /* SplashViewController.swift */,
+				5542E9FA213238C800DB113B /* SplashViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		5542E9E7213235EA00DB113B /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9EB2132373100DB113B /* ObservableView */,
+				5542E9E82132373000DB113B /* BaseNavigationController.swift */,
+				5542E9E92132373100DB113B /* Navigation.swift */,
+				5542E9EA2132373100DB113B /* Wireframe.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		5542E9EB2132373100DB113B /* ObservableView */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9EC2132373100DB113B /* ObservableViewWireframe.swift */,
+				5542E9ED2132373100DB113B /* ObserverPresenter.swift */,
+				5542E9EE2132373100DB113B /* ObservableViewController.swift */,
+			);
+			path = ObservableView;
+			sourceTree = "<group>";
+		};
+		5542E9FD21323C3300DB113B /* States */ = {
+			isa = PBXGroup;
+			children = (
+				5542E9FE21323C3E00DB113B /* AppState.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		CD6A17BAE300435D0F132A25 /* Pods */ = {
@@ -277,7 +347,7 @@
 				5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */,
 				5542E9B72131F7EA00DB113B /* Assets.xcassets in Resources */,
 				5542E9D92131FE6400DB113B /* BrastlewarkApi.plist in Resources */,
-				5542E9B52131F7EA00DB113B /* Main.storyboard in Resources */,
+				5542E9FC213238C800DB113B /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,12 +409,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5542E9D42131FBEC00DB113B /* Api.swift in Sources */,
+				5542E9F22132373100DB113B /* ObservableViewWireframe.swift in Sources */,
+				5542E9FF21323C3E00DB113B /* AppState.swift in Sources */,
 				5542E9DF213200DD00DB113B /* Citizen.swift in Sources */,
-				5542E9B22131F7EA00DB113B /* ViewController.swift in Sources */,
+				5542E9FB213238C800DB113B /* SplashViewController.swift in Sources */,
+				5542E9F02132373100DB113B /* Navigation.swift in Sources */,
 				5542E9D62131FCD700DB113B /* RxApi.swift in Sources */,
 				5542E9DD2131FFD900DB113B /* BrastlewarkApi.swift in Sources */,
 				5542E9DB2131FF1100DB113B /* FetchPopulationInteractor.swift in Sources */,
+				5542E9F32132373100DB113B /* ObserverPresenter.swift in Sources */,
+				5542E9E5213233C100DB113B /* CitizenRepository.swift in Sources */,
+				5542E9F12132373100DB113B /* Wireframe.swift in Sources */,
+				5542E9F8213238B400DB113B /* SplashEventsHandler.swift in Sources */,
 				5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */,
+				5542E9EF2132373100DB113B /* BaseNavigationController.swift in Sources */,
+				5542E9F6213238AB00DB113B /* SplashWireframe.swift in Sources */,
+				5542E9F42132373100DB113B /* ObservableViewController.swift in Sources */,
 				5542E9E22132023700DB113B /* DictionaryHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,14 +448,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5542E9B32131F7EA00DB113B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5542E9B42131F7EA00DB113B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

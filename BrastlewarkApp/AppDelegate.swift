@@ -13,13 +13,24 @@ import RxSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	var navigation: Navigation!
 
-	let disposeBag = DisposeBag()
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		
+		let navigation = createNavigation()
+		let splash = SplashWireframe(navigation: navigation)
+		try! splash.setAsRootWireframe()
 		return true
 	}
 
+	func createNavigation() -> Navigation {
+		let window = UIWindow (frame: UIScreen.main.bounds)
+		window.makeKeyAndVisible()
+
+		let navigation = Navigation (window: window)
+		self.navigation = navigation
+
+		return navigation
+	}
 
 }
 
