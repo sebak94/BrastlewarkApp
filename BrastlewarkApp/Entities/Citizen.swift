@@ -46,4 +46,18 @@ extension Citizen {
 		self.professions = professions
 		self.friends = friends
 	}
+
+	func toDictionary() -> [String : Any] {
+		return [
+			"id": id,
+			"name": name,
+			"thumbnail": imageURL.absoluteString,
+			"age": age,
+			"weight": weight,
+			"height": height,
+			"hair_color": hairColor,
+			"professions": professions,
+			"friends" : friends
+		]
+	}
 }
