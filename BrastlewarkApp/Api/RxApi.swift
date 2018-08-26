@@ -21,24 +21,27 @@ class RxApi {
 							 headers: [String: String]? = nil) -> Observable<Any>
 	{
 		return Observable.create { observer in
-			self.api.request(method, path: path, parameters: parameters, encoding: encoding, headers: headers)
-			{ response in
-				switch (response.result) {
-				case .success(let data):
-					observer.onNext(data)
-					observer.on(.completed)
-				case .failure(let error):
-					observer.onError(error)
-				}
-			}
+			self.api
+				.request(method, path: path, parameters: parameters, encoding: encoding, headers: headers)
+					{ response in
+						switch (response.result) {
+						case .success(let data):
+							observer.onNext(data)
+							observer.on(.completed)
+						case .failure(let error):
+							observer.onError(error)
+						}
+					}
 
 			return Disposables.create()
 		}
 	}
 
-	open func get( _ path: String, parameters: [String: AnyObject]? = nil,
-						encoding: ParameterEncoding = URLEncoding.default,
-						headers: [String: String]? = nil) -> Observable<Any>
+	open func get(
+		_ path: String,
+		parameters: [String: AnyObject]? = nil,
+		encoding: ParameterEncoding = URLEncoding.default,
+		headers: [String: String]? = nil) -> Observable<Any>
 	{
 		return request( .get, path: path, parameters: parameters, encoding: encoding, headers: headers)
 	}
@@ -47,5 +50,6 @@ class RxApi {
 extension Api {
 	var rx: RxApi { get {
 		return RxApi (api: self)
-		} }
+		}
+	}
 }

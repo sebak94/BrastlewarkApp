@@ -30,7 +30,10 @@
 		5542E9FB213238C800DB113B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9F9213238C800DB113B /* SplashViewController.swift */; };
 		5542E9FC213238C800DB113B /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9FA213238C800DB113B /* SplashViewController.xib */; };
 		5542E9FF21323C3E00DB113B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9FE21323C3E00DB113B /* AppState.swift */; };
+		5542EA03213321E600DB113B /* FetchPopulationInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA02213321E600DB113B /* FetchPopulationInteractorTests.swift */; };
+		5542EA072133225C00DB113B /* CitizenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA062133225C00DB113B /* CitizenTests.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
+		BBB4C5A3FCA53E421FAEB84E /* Pods_BrastlewarkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		206F06AC6B35692ADBF09C40 /* Pods-BrastlewarkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.release.xcconfig"; sourceTree = "<group>"; };
+		35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9AC2131F7EA00DB113B /* BrastlewarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrastlewarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9AF2131F7EA00DB113B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5542E9B62131F7EA00DB113B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,8 +76,12 @@
 		5542E9F9213238C800DB113B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		5542E9FA213238C800DB113B /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		5542E9FE21323C3E00DB113B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5542EA02213321E600DB113B /* FetchPopulationInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopulationInteractorTests.swift; sourceTree = "<group>"; };
+		5542EA062133225C00DB113B /* CitizenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CitizenTests.swift; path = BrastlewarkAppTests/Entities/CitizenTests.swift; sourceTree = SOURCE_ROOT; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9D125EABE123C65F6E2F874 /* Pods-BrastlewarkAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkAppTests/Pods-BrastlewarkAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F356F49821EEF3551BC5A66C /* Pods-BrastlewarkAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkAppTests/Pods-BrastlewarkAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBB4C5A3FCA53E421FAEB84E /* Pods_BrastlewarkAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */,
+				35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 		5542E9C32131F7EA00DB113B /* BrastlewarkAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5542EA052133224000DB113B /* Entities */,
+				5542EA01213321C500DB113B /* Interactors */,
 				5542E9C42131F7EA00DB113B /* BrastlewarkAppTests.swift */,
 				5542E9C62131F7EA00DB113B /* Info.plist */,
 			);
@@ -181,6 +193,7 @@
 		5542E9D22131FB9C00DB113B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5542EA002133216100DB113B /* Home */,
 				5542E9E6213235CF00DB113B /* Splash */,
 			);
 			path = Scenes;
@@ -250,11 +263,37 @@
 			path = States;
 			sourceTree = "<group>";
 		};
+		5542EA002133216100DB113B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5542EA01213321C500DB113B /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				5542EA02213321E600DB113B /* FetchPopulationInteractorTests.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		5542EA052133224000DB113B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5542EA062133225C00DB113B /* CitizenTests.swift */,
+			);
+			name = Entities;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CD6A17BAE300435D0F132A25 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */,
 				206F06AC6B35692ADBF09C40 /* Pods-BrastlewarkApp.release.xcconfig */,
+				D9D125EABE123C65F6E2F874 /* Pods-BrastlewarkAppTests.debug.xcconfig */,
+				F356F49821EEF3551BC5A66C /* Pods-BrastlewarkAppTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -285,9 +324,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5542E9CC2131F7EA00DB113B /* Build configuration list for PBXNativeTarget "BrastlewarkAppTests" */;
 			buildPhases = (
+				14A738372B5F6034A0B5E6C7 /* [CP] Check Pods Manifest.lock */,
 				5542E9BC2131F7EA00DB113B /* Sources */,
 				5542E9BD2131F7EA00DB113B /* Frameworks */,
 				5542E9BE2131F7EA00DB113B /* Resources */,
+				F3F2F36586055A8A590B510E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,6 +402,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14A738372B5F6034A0B5E6C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BrastlewarkAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		190FE467D9CED34F2551B4B2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +460,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F3F2F36586055A8A590B510E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BrastlewarkAppTests/Pods-BrastlewarkAppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxNimble/RxNimble.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrastlewarkAppTests/Pods-BrastlewarkAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -433,6 +522,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5542EA072133225C00DB113B /* CitizenTests.swift in Sources */,
+				5542EA03213321E600DB113B /* FetchPopulationInteractorTests.swift in Sources */,
 				5542E9C52131F7EA00DB113B /* BrastlewarkAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +691,7 @@
 		};
 		5542E9CD2131F7EA00DB113B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9D125EABE123C65F6E2F874 /* Pods-BrastlewarkAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -617,6 +709,7 @@
 		};
 		5542E9CE2131F7EA00DB113B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F356F49821EEF3551BC5A66C /* Pods-BrastlewarkAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
