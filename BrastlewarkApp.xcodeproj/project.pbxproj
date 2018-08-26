@@ -33,6 +33,8 @@
 		5542EA072133225C00DB113B /* CitizenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA062133225C00DB113B /* CitizenTests.swift */; };
 		5542EA0A213352EC00DB113B /* CitizenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA09213352EC00DB113B /* CitizenFactory.swift */; };
 		5542EA0C213354B700DB113B /* StubHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA0B213354B700DB113B /* StubHelper.swift */; };
+		5542EA10213358BD00DB113B /* SplashWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA0F213358BD00DB113B /* SplashWireframeTests.swift */; };
+		5542EA13213359A100DB113B /* SplashEventsHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA12213359A100DB113B /* SplashEventsHandlerTests.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
 		BBB4C5A3FCA53E421FAEB84E /* Pods_BrastlewarkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		5542EA062133225C00DB113B /* CitizenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CitizenTests.swift; path = BrastlewarkAppTests/Entities/CitizenTests.swift; sourceTree = SOURCE_ROOT; };
 		5542EA09213352EC00DB113B /* CitizenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenFactory.swift; sourceTree = "<group>"; };
 		5542EA0B213354B700DB113B /* StubHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubHelper.swift; sourceTree = "<group>"; };
+		5542EA0F213358BD00DB113B /* SplashWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframeTests.swift; sourceTree = "<group>"; };
+		5542EA12213359A100DB113B /* SplashEventsHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashEventsHandlerTests.swift; sourceTree = "<group>"; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D125EABE123C65F6E2F874 /* Pods-BrastlewarkAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkAppTests/Pods-BrastlewarkAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,10 +162,12 @@
 		5542E9C32131F7EA00DB113B /* BrastlewarkAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				5542EA0D2133570300DB113B /* Helpers */,
-				5542EA08213352D900DB113B /* Factories */,
+				5542EA112133598D00DB113B /* EventsHandlers */,
 				5542EA052133224000DB113B /* Entities */,
 				5542EA01213321C500DB113B /* Interactors */,
+				5542EA0E2133589D00DB113B /* Wireframes */,
+				5542EA0D2133570300DB113B /* Helpers */,
+				5542EA08213352D900DB113B /* Factories */,
 				5542E9C62131F7EA00DB113B /* Info.plist */,
 			);
 			path = BrastlewarkAppTests;
@@ -304,6 +310,22 @@
 				5542EA0B213354B700DB113B /* StubHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5542EA0E2133589D00DB113B /* Wireframes */ = {
+			isa = PBXGroup;
+			children = (
+				5542EA0F213358BD00DB113B /* SplashWireframeTests.swift */,
+			);
+			path = Wireframes;
+			sourceTree = "<group>";
+		};
+		5542EA112133598D00DB113B /* EventsHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				5542EA12213359A100DB113B /* SplashEventsHandlerTests.swift */,
+			);
+			path = EventsHandlers;
 			sourceTree = "<group>";
 		};
 		CD6A17BAE300435D0F132A25 /* Pods */ = {
@@ -541,9 +563,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5542EA13213359A100DB113B /* SplashEventsHandlerTests.swift in Sources */,
 				5542EA072133225C00DB113B /* CitizenTests.swift in Sources */,
 				5542EA0A213352EC00DB113B /* CitizenFactory.swift in Sources */,
 				5542EA03213321E600DB113B /* FetchPopulationInteractorTests.swift in Sources */,
+				5542EA10213358BD00DB113B /* SplashWireframeTests.swift in Sources */,
 				5542EA0C213354B700DB113B /* StubHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
