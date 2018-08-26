@@ -33,7 +33,7 @@ class SplashWireframe: Wireframe {
 
 extension SplashWireframe: SplashNavigation {
 	public func presentHome (for state: AppState) {
-//		let homeWireframe = HomeWireframe (navigation: navigation, state: state)
-//		try? homeWireframe.setAsRootWireframe(inNavigation: true)
+		let homeWireframe = HomeWireframe (navigation: navigation, state: state)
+		try? homeWireframe.setAsRootWireframe(inNavigation: true)
 	}
 }

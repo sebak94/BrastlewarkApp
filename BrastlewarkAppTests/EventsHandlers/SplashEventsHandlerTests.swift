@@ -18,7 +18,7 @@ class SplashEventsHandlerTests: QuickSpec {
 	override func spec() {
 
 		context("when the eventsHandler is created") {
-			let (navigation, fetchPopulation, eventsHandler) = createPresenter()
+			let (navigation, fetchPopulation, eventsHandler) = createEventsHandler()
 
 			context("when the view is loaded") {
 				beforeEach{ eventsHandler.viewDidLoad() }
@@ -49,7 +49,7 @@ class SplashEventsHandlerTests: QuickSpec {
 
 	}
 
-	func createPresenter() ->
+	func createEventsHandler() ->
 		(
 		SplashNavigationNavigationMock,
 		FetchPopulationMock, SplashEventsHandler

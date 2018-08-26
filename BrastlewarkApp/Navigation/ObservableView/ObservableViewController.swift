@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol ViewObserver: class {
-	func subcribeToViewEvents ()
+	func subscribeToViewEvents ()
 }
 
 class ObservableViewController: WireframeViewController {
@@ -42,7 +42,7 @@ class ObservableViewController: WireframeViewController {
 		
 		super.viewDidLoad()
 		
-		viewObserver?.subcribeToViewEvents()
+		viewObserver?.subscribeToViewEvents()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {

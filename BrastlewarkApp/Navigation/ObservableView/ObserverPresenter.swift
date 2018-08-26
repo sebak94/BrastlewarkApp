@@ -9,7 +9,7 @@
 import Foundation
 
 class ObserverPresenter: ViewObserver {
-	func subcribeToViewEvents() {
+	func subscribeToViewEvents() {
 		fatalError ("Must be implemented in subclass")
 	}
 }
