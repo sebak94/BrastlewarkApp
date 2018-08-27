@@ -41,6 +41,10 @@
 		5542EA1C21335D0800DB113B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5542EA1A21335D0800DB113B /* HomeViewController.xib */; };
 		5542EA1E21335E8E00DB113B /* HomeWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA1D21335E8E00DB113B /* HomeWireframeTests.swift */; };
 		5542EA2121335F8300DB113B /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA2021335F8300DB113B /* HomePresenterTests.swift */; };
+		5542EA24213362BE00DB113B /* CitizensCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA23213362BE00DB113B /* CitizensCollectionView.swift */; };
+		5542EA27213362D800DB113B /* CitizensCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA25213362D800DB113B /* CitizensCollectionViewCell.swift */; };
+		5542EA28213362D800DB113B /* CitizensCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5542EA26213362D800DB113B /* CitizensCollectionViewCell.xib */; };
+		5542EA2A21337C4F00DB113B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA2921337C4F00DB113B /* NavigationBar.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
 		BBB4C5A3FCA53E421FAEB84E /* Pods_BrastlewarkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +100,10 @@
 		5542EA1A21335D0800DB113B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		5542EA1D21335E8E00DB113B /* HomeWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireframeTests.swift; sourceTree = "<group>"; };
 		5542EA2021335F8300DB113B /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		5542EA23213362BE00DB113B /* CitizensCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizensCollectionView.swift; sourceTree = "<group>"; };
+		5542EA25213362D800DB113B /* CitizensCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizensCollectionViewCell.swift; sourceTree = "<group>"; };
+		5542EA26213362D800DB113B /* CitizensCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitizensCollectionViewCell.xib; sourceTree = "<group>"; };
+		5542EA2921337C4F00DB113B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D125EABE123C65F6E2F874 /* Pods-BrastlewarkAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkAppTests/Pods-BrastlewarkAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +271,7 @@
 				5542E9E82132373000DB113B /* BaseNavigationController.swift */,
 				5542E9E92132373100DB113B /* Navigation.swift */,
 				5542E9EA2132373100DB113B /* Wireframe.swift */,
+				5542EA2921337C4F00DB113B /* NavigationBar.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 				5542EA1721335CFB00DB113B /* HomePresenter.swift */,
 				5542EA1921335D0800DB113B /* HomeViewController.swift */,
 				5542EA1A21335D0800DB113B /* HomeViewController.xib */,
+				5542EA222133628D00DB113B /* CitizensCollectionView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -352,6 +362,16 @@
 				5542EA2021335F8300DB113B /* HomePresenterTests.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		5542EA222133628D00DB113B /* CitizensCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5542EA23213362BE00DB113B /* CitizensCollectionView.swift */,
+				5542EA25213362D800DB113B /* CitizensCollectionViewCell.swift */,
+				5542EA26213362D800DB113B /* CitizensCollectionViewCell.xib */,
+			);
+			path = CitizensCollectionView;
 			sourceTree = "<group>";
 		};
 		CD6A17BAE300435D0F132A25 /* Pods */ = {
@@ -453,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */,
+				5542EA28213362D800DB113B /* CitizensCollectionViewCell.xib in Resources */,
 				5542E9B72131F7EA00DB113B /* Assets.xcassets in Resources */,
 				5542EA1C21335D0800DB113B /* HomeViewController.xib in Resources */,
 				5542E9D92131FE6400DB113B /* BrastlewarkApi.plist in Resources */,
@@ -496,12 +517,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -565,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5542EA27213362D800DB113B /* CitizensCollectionViewCell.swift in Sources */,
 				5542E9D42131FBEC00DB113B /* Api.swift in Sources */,
 				5542EA1621335CF000DB113B /* HomeWireframe.swift in Sources */,
 				5542E9F22132373100DB113B /* ObservableViewWireframe.swift in Sources */,
@@ -574,6 +598,8 @@
 				5542E9DF213200DD00DB113B /* Citizen.swift in Sources */,
 				5542E9FB213238C800DB113B /* SplashViewController.swift in Sources */,
 				5542E9F02132373100DB113B /* Navigation.swift in Sources */,
+				5542EA24213362BE00DB113B /* CitizensCollectionView.swift in Sources */,
+				5542EA2A21337C4F00DB113B /* NavigationBar.swift in Sources */,
 				5542E9D62131FCD700DB113B /* RxApi.swift in Sources */,
 				5542E9DD2131FFD900DB113B /* BrastlewarkApi.swift in Sources */,
 				5542E9DB2131FF1100DB113B /* FetchPopulationInteractor.swift in Sources */,

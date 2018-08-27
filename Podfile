@@ -9,7 +9,8 @@ target 'BrastlewarkApp' do
 	pod 'RxSwift'
 	pod 'RxCocoa'
 	pod 'Alamofire'
-
+	pod 'Kingfisher'
+	
 	target 'BrastlewarkAppTests' do
 		inherit! :search_paths
 
@@ -21,3 +22,4 @@ target 'BrastlewarkApp' do
 		pod 'RxNimble'
 	end
 end
+

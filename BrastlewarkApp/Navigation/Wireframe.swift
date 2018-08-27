@@ -256,39 +256,18 @@ extension Wireframe: Equatable {
 }
 
 extension Wireframe {
-	func presentConfirmationAlert( title: String, message: String? = nil,
-	                               okTitle: String = "Aceptar", cancelTitle: String = "Cancelar",
-	                               okHandler: ( () -> Void)? = nil, cancelHandler: ( () -> Void)? = nil,
-	                               animated: Bool = true, presented: ( () -> Void)? = nil)
-	{
+	func presentInformationPopup(
+		title: String? = nil,
+		message: String,
+		animated: Bool = true,
+		action: ( () -> Void)? = nil
+		) {
 		let alertVC = UIAlertController( title: title, message: message, preferredStyle: .alert )
 
-		let okAction = UIAlertAction( title: okTitle, style: .default) { action in
-			okHandler? ()
-		}
-		let cancelAction = UIAlertAction( title: cancelTitle, style: .cancel) { action in
-			cancelHandler? ()
-		}
+		let okAction = UIAlertAction( title: "Ok", style: .default) { _ in action? () }
+		alertVC.addAction(okAction)
 
-		alertVC.addAction( okAction )
-		alertVC.addAction( cancelAction )
-
-		self.viewController?.present( alertVC, animated: animated, completion: presented )
-	}
-	
-	func showPopupAlert(
-		title: String,
-		message: String,
-		rightButtonTitle: String,
-		leftButtonTitle: String,
-		rightHandler: ( () -> Void)?,
-		leftHandler: ( () -> Void)?
-	) {
-		presentConfirmationAlert(
-			title: title, message: message, okTitle: rightButtonTitle, cancelTitle: leftButtonTitle,
-			okHandler: rightHandler, cancelHandler: leftHandler,
-			animated: true, presented: nil
-		)
+		self.viewController?.present( alertVC, animated: animated, completion: nil )
 	}
 }
 

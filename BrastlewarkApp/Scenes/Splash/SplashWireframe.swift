@@ -10,10 +10,15 @@ import UIKit
 
 protocol SplashNavigation: class {
 	func presentHome( for state: AppState )
+	func presentInformationPopup(
+		title: String?,
+		message: String,
+		animated: Bool,
+		action: (() -> Void)?
+	)
 }
 
 class SplashWireframe: Wireframe {
-
 	let splashEventsHandler: SplashEventsHandler
 
 	required init(navigation: Navigation) {

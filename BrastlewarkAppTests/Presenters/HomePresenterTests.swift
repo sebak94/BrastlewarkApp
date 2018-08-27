@@ -18,10 +18,19 @@ class HomePresenterTests: QuickSpec {
 	override func spec() {
 
 		context("when the presenter is created") {
-			let (navigation, presenter) = createPresenter()
+			let (navigation, presenter, view) = createPresenter()
 
 			it ("is created with its state") {
 				expect(presenter.state).notTo(beNil())
+			}
+
+			context("when subscribeToViewEvents is called") {
+				beforeEach {
+					presenter.subscribeToViewEvents()
+				}
+				it("sets the citizens to the view") {
+					expect(view.citizens).notTo(beNil())
+				}
 			}
 		}
 
@@ -29,16 +38,26 @@ class HomePresenterTests: QuickSpec {
 
 	func createPresenter() ->
 		(
-			HomeNavigationMock, HomePresenter
+			HomeNavigationMock, HomePresenter, HomeViewMock
 		) {
 			let navigation = HomeNavigationMock()
 			let state = AppState(citizenRepository: CitizenRepository(citizens: []))
-			let presenter = HomePresenter(state: state)
+			let view = HomeViewMock()
+			let presenter = HomePresenter(state: state, view: view)
 			presenter.navigation = navigation
 
-			return (navigation, presenter)
+			return (navigation, presenter, view)
 	}
 }
 
 // MARK: Mocks
-class HomeNavigationMock: HomeNavigation {}
+class HomeNavigationMock: HomeNavigation {
+	func presentCitizenDetail(citizen: Citizen) {}
+}
+
+class HomeViewMock: HomeView {
+	var citizens : [Citizen]? = nil
+	func setCitizens(_ citizens: [Citizen]) {
+		self.citizens = citizens
+	}
+}

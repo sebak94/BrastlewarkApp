@@ -20,6 +20,10 @@ class SplashEventsHandler {
 	}
 
 	func viewDidLoad() {
+		performPopulationFetch()
+	}
+
+	func performPopulationFetch() {
 		fetchPopulation
 			.execute()
 			.subscribe(
@@ -27,9 +31,16 @@ class SplashEventsHandler {
 					guard let state = self?.createState(withCitizens: citizens) else { return }
 					self?.navigation?.presentHome(for: state)
 				},
-				onError: { _ in
-					//handle error
-				}
+				onError: { [weak self] _ in
+					self?.navigation?.presentInformationPopup(
+						title: "Ups!",
+						message: "There was an error loading Brastlewark population. \n Press OK to try again!",
+						animated: true,
+						action: {
+							self?.performPopulationFetch()
+						}
+					)
+			}
 			).disposed(by: disposeBag)
 	}
 

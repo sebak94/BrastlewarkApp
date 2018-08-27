@@ -8,6 +8,20 @@
 
 import UIKit
 
-class HomeViewController: ObservableViewController {
+protocol HomeView {
+	func setCitizens( _ citizens: [Citizen] )
+}
 
+class HomeViewController: ObservableViewController, HomeView {
+	@IBOutlet weak var citizensCollectionView: CitizensCollectionView!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		navigationItem.title = "Brastlewark"
+	}
+
+	func setCitizens( _ citizens: [Citizen] ) {
+		citizensCollectionView.citizens = citizens
+		citizensCollectionView.reloadData()
+	}
 }

@@ -40,9 +40,21 @@ class SplashEventsHandlerTests: QuickSpec {
 				context ("when the fetcher has an error") {
 					beforeEach { fetchPopulation.citizensToReturnObserver.onError(NSError()) }
 
-					it("handles the error") {
-
+					it("shows the error popup") {
+						expect (navigation.popupWasShownWithAction).notTo(beNil())
 					}
+
+					context("when the user presses the ok button") {
+						beforeEach {
+							fetchPopulation.executeWasCalled = false
+							navigation.popupWasShownWithAction?()
+						}
+
+						it ("calls the fetcher again") {
+							expect(fetchPopulation.executeWasCalled).to(beTrue())
+						}
+					}
+
 				}
 			}
 		}
@@ -68,9 +80,19 @@ class SplashEventsHandlerTests: QuickSpec {
 class SplashNavigationNavigationMock: SplashNavigation {
 
 	var state: AppState?
+	var popupWasShownWithAction: (() -> Void)?
 
 	func presentHome(for state: AppState) {
 		self.state = state
+	}
+
+	func presentInformationPopup(
+		title: String?,
+		message: String,
+		animated: Bool,
+		action: (() -> Void)?
+	) {
+		popupWasShownWithAction = action
 	}
 }
 

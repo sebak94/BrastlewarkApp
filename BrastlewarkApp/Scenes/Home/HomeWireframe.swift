@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeNavigation: class {
-
+	func presentCitizenDetail(citizen: Citizen)
 }
 
 class HomeWireframe: ObservableViewWireframe<HomePresenter> {
@@ -19,7 +19,8 @@ class HomeWireframe: ObservableViewWireframe<HomePresenter> {
 		let view = HomeViewController()
 
 		homePresenter = HomePresenter(
-			state: state
+			state: state,
+			view: view
 		)
 
 		super.init(navigation: navigation, presenter: homePresenter)
@@ -31,6 +32,18 @@ class HomeWireframe: ObservableViewWireframe<HomePresenter> {
 	required init(navigation: Navigation) {
 		fatalError("init(navigation:) has not been implemented")
 	}
+
+	override func createNavigationController () throws -> BaseNavigationController {
+		guard navigationController == nil else { return navigationController! }
+		guard let selfVC = viewController else { throw WireframePresentationError.nilSelfViewController }
+
+		return BaseNavigationController.withNavigationBar(rootViewController: selfVC)
+	}
 }
 
-extension HomeWireframe: HomeNavigation {}
+extension HomeWireframe: HomeNavigation {
+	func presentCitizenDetail(citizen: Citizen) {
+//		let citizenDetailWireframe = CitizenDetailWireframe (navigation: navigation, citizen: citizen)
+//		try? citizenDetailWireframe.setAsRootWireframe(inNavigation: true)
+	}
+}
