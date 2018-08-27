@@ -18,7 +18,7 @@ class HomePresenterTests: QuickSpec {
 	override func spec() {
 
 		context("when the presenter is created") {
-			let (navigation, presenter, view) = createPresenter()
+			let (navigation, presenter, view, eventsEmitter) = createPresenter()
 
 			it ("is created with its state") {
 				expect(presenter.state).notTo(beNil())
@@ -32,32 +32,58 @@ class HomePresenterTests: QuickSpec {
 					expect(view.citizens).notTo(beNil())
 				}
 			}
+
+			context ("when a citizen is selected") {
+				beforeEach {
+					eventsEmitter.citizenSelectedObserver.onNext(CitizenFactory.citizen())
+				}
+				it ("presents citizen detail") {
+					expect(navigation.presentCitizenDetailWasCalledWithCitizen).notTo(beNil())
+				}
+			}
 		}
 
 	}
 
 	func createPresenter() ->
 		(
-			HomeNavigationMock, HomePresenter, HomeViewMock
+			HomeNavigationMock, HomePresenter, HomeViewMock, HomeEventsEmitterDouble
 		) {
 			let navigation = HomeNavigationMock()
 			let state = AppState(citizenRepository: CitizenRepository(citizens: []))
 			let view = HomeViewMock()
-			let presenter = HomePresenter(state: state, view: view)
+			let eventsEmitter = HomeEventsEmitterDouble()
+			let presenter = HomePresenter(state: state, view: view, eventsEmitter: eventsEmitter)
 			presenter.navigation = navigation
 
-			return (navigation, presenter, view)
+			return (navigation, presenter, view, eventsEmitter)
 	}
 }
 
 // MARK: Mocks
 class HomeNavigationMock: HomeNavigation {
-	func presentCitizenDetail(citizen: Citizen) {}
+	var presentCitizenDetailWasCalledWithCitizen : Citizen?
+	func presentCitizenDetail(citizen: Citizen) {
+		presentCitizenDetailWasCalledWithCitizen = citizen
+	}
 }
 
 class HomeViewMock: HomeView {
 	var citizens : [Citizen]? = nil
 	func setCitizens(_ citizens: [Citizen]) {
 		self.citizens = citizens
+	}
+}
+
+class HomeEventsEmitterDouble: HomeViewEventsEmitter {
+	var citizenSelectedObservable: Observable<Citizen> { return _citizenSelectedObservable }
+	var citizenSelectedObserver : AnyObserver<Citizen>!
+	private var _citizenSelectedObservable: Observable<Citizen>!
+
+	init () {
+		_citizenSelectedObservable = Observable.create() { observer in
+			self.citizenSelectedObserver = observer
+			return Disposables.create()
+		}
 	}
 }

@@ -12,8 +12,11 @@ class CitizensCollectionViewCell: UICollectionViewCell {
 
 	@IBOutlet weak var citizenImageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
+
+	var citizen : Citizen?
 	
-	public func configure(with citizen: Citizen) {
+	public func reload() {
+		guard let citizen = citizen else { return }
 		nameLabel.text = citizen.name
 		citizenImageView.kf.setImage(with: citizen.imageURL)
 	}

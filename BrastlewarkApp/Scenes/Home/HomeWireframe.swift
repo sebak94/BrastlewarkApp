@@ -20,7 +20,8 @@ class HomeWireframe: ObservableViewWireframe<HomePresenter> {
 
 		homePresenter = HomePresenter(
 			state: state,
-			view: view
+			view: view,
+			eventsEmitter: view
 		)
 
 		super.init(navigation: navigation, presenter: homePresenter)
@@ -43,7 +44,7 @@ class HomeWireframe: ObservableViewWireframe<HomePresenter> {
 
 extension HomeWireframe: HomeNavigation {
 	func presentCitizenDetail(citizen: Citizen) {
-//		let citizenDetailWireframe = CitizenDetailWireframe (navigation: navigation, citizen: citizen)
-//		try? citizenDetailWireframe.setAsRootWireframe(inNavigation: true)
+		let citizenDetailWireframe = CitizenDetailWireframe (navigation: navigation, citizen: citizen)
+		try? citizenDetailWireframe.push(inWireframe: self)
 	}
 }

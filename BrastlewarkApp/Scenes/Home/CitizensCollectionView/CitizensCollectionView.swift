@@ -5,11 +5,14 @@
 //  Created by Felipe Ferrari on 26/08/2018.
 //  Copyright © 2018 Felipe Ferrari. All rights reserved.
 //
-
+import RxSwift
+import RxCocoa
 import UIKit
 
 class CitizensCollectionView: UICollectionView {
 	var citizens : [Citizen] = []
+
+	let cellIdentifier = "CitizenCell"
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -17,8 +20,15 @@ class CitizensCollectionView: UICollectionView {
 		self.delegate = self
 		self.register(
 			UINib.init(nibName: "CitizensCollectionViewCell", bundle: nil),
-			forCellWithReuseIdentifier: "CitizenCell"
+			forCellWithReuseIdentifier: cellIdentifier
 		)
+	}
+
+	var selectedCitizenObservable: Observable<Citizen> {
+		return self.rx.itemSelected.asObservable()
+			.map { indexPath in
+				self.citizens[indexPath.row]
+		}
 	}
 }
 
@@ -38,13 +48,13 @@ extension CitizensCollectionView: UICollectionViewDataSource {
 		cellForItemAt indexPath: IndexPath
 	) -> UICollectionViewCell
 	{
-		let cell = self.dequeueReusableCell(
-			withReuseIdentifier: "CitizenCell",
+		guard let cell = self.dequeueReusableCell(
+			withReuseIdentifier: cellIdentifier,
 			for: indexPath
-		) as! CitizensCollectionViewCell
+		) as? CitizensCollectionViewCell else { return UICollectionViewCell() }
 
-		cell.configure(with: citizens[indexPath.row])
-
+		cell.citizen = citizens[indexPath.row]
+		cell.reload()
 		return cell
 	}
 }

@@ -24,13 +24,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="217" height="260"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlL-dn-gil">
+                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlL-dn-gil">
                         <rect key="frame" x="0.0" y="0.0" width="217" height="260"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQI-Qk-jyD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQI-Qk-jyD">
                                 <rect key="frame" x="0.0" y="0.0" width="217" height="260"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDb-9t-xnX">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDb-9t-xnX">
                                 <rect key="frame" x="12" y="223.5" width="193" height="24.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,28 +38,28 @@
                                 <color key="shadowColor" red="0.47319162436548223" green="0.47319162436548223" blue="0.47319162436548223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-aO-RMR">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-aO-RMR">
                                 <rect key="frame" x="0.0" y="0.0" width="1" height="260"/>
                                 <color key="backgroundColor" red="0.93553696065989844" green="0.93553696065989844" blue="0.93553696065989844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="Zn8-2Y-llt"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svv-C8-t6j">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svv-C8-t6j">
                                 <rect key="frame" x="216" y="0.0" width="1" height="260"/>
                                 <color key="backgroundColor" red="0.93553696065989844" green="0.93553696065989844" blue="0.93553696065989844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="6d1-wr-TVF"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPR-ML-jUd">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPR-ML-jUd">
                                 <rect key="frame" x="0.0" y="0.0" width="217" height="1"/>
                                 <color key="backgroundColor" red="0.93553696065989844" green="0.93553696065989844" blue="0.93553696065989844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Ra4-GC-WJD"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Dx-57K">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxa-Dx-57K">
                                 <rect key="frame" x="0.0" y="259" width="217" height="1"/>
                                 <color key="backgroundColor" red="0.93553696065989844" green="0.93553696065989844" blue="0.93553696065989844" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
