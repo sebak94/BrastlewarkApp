@@ -51,6 +51,7 @@
 		5542EA332133883C00DB113B /* CitizenDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5542EA312133883C00DB113B /* CitizenDetailViewController.xib */; };
 		5542EA352133A9CF00DB113B /* CitizenDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA342133A9CF00DB113B /* CitizenDetailPresenterTests.swift */; };
 		5542EA372133AABA00DB113B /* CitizenDetailWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */; };
+		5585ECD12134EC8E0041B702 /* UIImageViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
 		BBB4C5A3FCA53E421FAEB84E /* Pods_BrastlewarkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +117,7 @@
 		5542EA312133883C00DB113B /* CitizenDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitizenDetailViewController.xib; sourceTree = "<group>"; };
 		5542EA342133A9CF00DB113B /* CitizenDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenDetailPresenterTests.swift; sourceTree = "<group>"; };
 		5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenDetailWireframeTests.swift; sourceTree = "<group>"; };
+		5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewHelper.swift; sourceTree = "<group>"; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D125EABE123C65F6E2F874 /* Pods-BrastlewarkAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkAppTests/Pods-BrastlewarkAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				5542E9E12132023700DB113B /* DictionaryHelper.swift */,
+				5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				5542E9E5213233C100DB113B /* CitizenRepository.swift in Sources */,
 				5542E9F12132373100DB113B /* Wireframe.swift in Sources */,
 				5542E9F8213238B400DB113B /* SplashEventsHandler.swift in Sources */,
+				5585ECD12134EC8E0041B702 /* UIImageViewHelper.swift in Sources */,
 				5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */,
 				5542E9EF2132373100DB113B /* BaseNavigationController.swift in Sources */,
 				5542E9F6213238AB00DB113B /* SplashWireframe.swift in Sources */,
