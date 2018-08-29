@@ -51,6 +51,8 @@
 		5542EA332133883C00DB113B /* CitizenDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5542EA312133883C00DB113B /* CitizenDetailViewController.xib */; };
 		5542EA352133A9CF00DB113B /* CitizenDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA342133A9CF00DB113B /* CitizenDetailPresenterTests.swift */; };
 		5542EA372133AABA00DB113B /* CitizenDetailWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */; };
+		556D87DF2136110800AAA1F7 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87DE2136110800AAA1F7 /* StringHelper.swift */; };
+		556D87E22136117800AAA1F7 /* CitizenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */; };
 		5585ECD12134EC8E0041B702 /* UIImageViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
 		BBB4C5A3FCA53E421FAEB84E /* Pods_BrastlewarkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */; };
@@ -117,6 +119,8 @@
 		5542EA312133883C00DB113B /* CitizenDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitizenDetailViewController.xib; sourceTree = "<group>"; };
 		5542EA342133A9CF00DB113B /* CitizenDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenDetailPresenterTests.swift; sourceTree = "<group>"; };
 		5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenDetailWireframeTests.swift; sourceTree = "<group>"; };
+		556D87DE2136110800AAA1F7 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenRepositoryTests.swift; sourceTree = "<group>"; };
 		5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewHelper.swift; sourceTree = "<group>"; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +200,7 @@
 		5542E9C32131F7EA00DB113B /* BrastlewarkAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				556D87E02136116200AAA1F7 /* Repositories */,
 				5542EA1F21335F7200DB113B /* Presenters */,
 				5542EA112133598D00DB113B /* EventsHandlers */,
 				5542EA052133224000DB113B /* Entities */,
@@ -257,6 +262,7 @@
 			children = (
 				5542E9E12132023700DB113B /* DictionaryHelper.swift */,
 				5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */,
+				556D87DE2136110800AAA1F7 /* StringHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -401,6 +407,14 @@
 				5542EA312133883C00DB113B /* CitizenDetailViewController.xib */,
 			);
 			path = CitizenDetail;
+			sourceTree = "<group>";
+		};
+		556D87E02136116200AAA1F7 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		CD6A17BAE300435D0F132A25 /* Pods */ = {
@@ -629,6 +643,7 @@
 				5542EA1B21335D0800DB113B /* HomeViewController.swift in Sources */,
 				5542EA2D213387EC00DB113B /* CitizenDetailWireframe.swift in Sources */,
 				5542E9DF213200DD00DB113B /* Citizen.swift in Sources */,
+				556D87DF2136110800AAA1F7 /* StringHelper.swift in Sources */,
 				5542E9FB213238C800DB113B /* SplashViewController.swift in Sources */,
 				5542E9F02132373100DB113B /* Navigation.swift in Sources */,
 				5542EA24213362BE00DB113B /* CitizensCollectionView.swift in Sources */,
@@ -660,6 +675,7 @@
 				5542EA352133A9CF00DB113B /* CitizenDetailPresenterTests.swift in Sources */,
 				5542EA03213321E600DB113B /* FetchPopulationInteractorTests.swift in Sources */,
 				5542EA10213358BD00DB113B /* SplashWireframeTests.swift in Sources */,
+				556D87E22136117800AAA1F7 /* CitizenRepositoryTests.swift in Sources */,
 				5542EA0C213354B700DB113B /* StubHelper.swift in Sources */,
 				5542EA372133AABA00DB113B /* CitizenDetailWireframeTests.swift in Sources */,
 				5542EA2121335F8300DB113B /* HomePresenterTests.swift in Sources */,

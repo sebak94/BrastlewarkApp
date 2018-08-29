@@ -24,7 +24,7 @@ struct Citizen {
 	let friends: [String]
 }
 
-extension Citizen {
+extension Citizen: Hashable {
 	init(fromDictionary dictionary: [String : Any]) throws {
 		guard let id = try? dictionary.valueOf("id") as Int,
 				let name = try? dictionary.valueOf("name") as String,
@@ -59,5 +59,13 @@ extension Citizen {
 			"professions": professions,
 			"friends" : friends
 		]
+	}
+
+	var hashValue: Int {
+		return id
+	}
+
+	static func ==(lhs: Citizen, rhs: Citizen) -> Bool {
+		return lhs.id == rhs.id
 	}
 }

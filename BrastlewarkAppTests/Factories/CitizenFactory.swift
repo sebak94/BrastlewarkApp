@@ -11,27 +11,37 @@ import Foundation
 @testable import BrastlewarkApp
 
 class CitizenFactory {
-	static func citizen () -> Citizen {
+	static func citizen (
+		id: Int = 0,
+		name: String = "Tobus Quickwhistle",
+		imageURL: URL =  URL(string: "http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg")!,
+		age: Int = 306,
+		weight: Double = 39.065952,
+		height: Double = 107.75835,
+		hairColor: String = "Pink",
+		professions: [String] = [
+			"Metalworker",
+			"Woodcarver",
+			"Stonecarver",
+			" Tinker",
+			"Tailor",
+			"Potter"
+		],
+		friends: [String] = [
+			"Cogwitz Chillwidget",
+			"Tinadette Chillbuster"
+		]
+	) -> Citizen {
 		return Citizen(
-			id: 0,
-			name: "Tobus Quickwhistle",
-			imageURL: URL(string: "http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg")!,
-			age: 306,
-			weight: 39.065952,
-			height: 107.75835,
-			hairColor: "Pink",
-			professions: [
-				"Metalworker",
-				"Woodcarver",
-				"Stonecarver",
-				" Tinker",
-				"Tailor",
-				"Potter"
-			],
-			friends:  [
-				"Cogwitz Chillwidget",
-				"Tinadette Chillbuster"
-			]
+			id: id,
+			name: name,
+			imageURL: imageURL,
+			age: age,
+			weight: weight,
+			height: height,
+			hairColor: hairColor,
+			professions:professions,
+			friends: friends
 		)
 	}
 }
