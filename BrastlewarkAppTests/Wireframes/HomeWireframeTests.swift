@@ -27,11 +27,7 @@ class HomeWireframeTests: QuickSpec {
 			}
 
 			it("sets itself as the presenters navigation") {
-				guard
-					let presenter = wireframe.presenter
-						as? HomePresenter
-					else { fail();	return }
-				expect(presenter.navigation).to(be(wireframe))
+				expect(wireframe.presenter.navigation).to(be(wireframe))
 			}
 		}
 	}

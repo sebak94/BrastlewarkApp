@@ -28,7 +28,37 @@ class HomePresenter: ObserverPresenter {
 
 	override func subscribeToViewEvents() {
 		subscribeToCitizenSelectedObservable()
+		subscribeToFilterAppliedObservable()
 		view.setCitizens(state.citizenRepository.citizens)
+		setupFilterViewRanges()
+	}
+
+	func setupFilterViewRanges() {
+		guard let maximumAge = state.citizenRepository.citizens.map({$0.age}).max(),
+				let minimumAge = state.citizenRepository.citizens.map({$0.age}).min(),
+				let maximumHeight = state.citizenRepository.citizens.map({$0.height}).max(),
+				let minimumHeight = state.citizenRepository.citizens.map({$0.height}).min(),
+				let maximumWeight = state.citizenRepository.citizens.map({$0.weight}).max(),
+				let minimumWeight = state.citizenRepository.citizens.map({$0.weight}).min()
+			else {
+				view.setRanges(
+					ageMax: 0,
+					ageMin: 0,
+					heightMax: 0,
+					heightMin: 0,
+					weightMax: 0,
+					weightMin: 0
+				)
+				return
+		}
+		view.setRanges(
+			ageMax: Float(maximumAge) + 1,
+			ageMin: Float(minimumAge) - 1,
+			heightMax: Float(maximumHeight) + 1,
+			heightMin: Float(minimumHeight) - 1,
+			weightMax: Float(maximumWeight) + 1,
+			weightMin: Float(minimumWeight) - 1
+		)
 	}
 
 	func subscribeToCitizenSelectedObservable() {
@@ -36,5 +66,17 @@ class HomePresenter: ObserverPresenter {
 			.subscribe( onNext: { [weak self] citizen in
 				self?.navigation?.presentCitizenDetail(citizen: citizen)
 			}).disposed( by: disposeBag )
+	}
+
+	func subscribeToFilterAppliedObservable() {
+		eventsEmitter.filterAppliedObservable
+			.subscribe( onNext: { [weak self] filters in
+				self?.applyFilters(filters)
+			}).disposed( by: disposeBag )
+	}
+
+	func applyFilters(_ filters: [Filter]) {
+		let filteredCitizens = state.citizenRepository.filter(by: filters)
+		view.setCitizens(filteredCitizens)
 	}
 }

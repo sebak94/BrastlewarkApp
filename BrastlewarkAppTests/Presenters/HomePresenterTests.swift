@@ -31,6 +31,9 @@ class HomePresenterTests: QuickSpec {
 				it("sets the citizens to the view") {
 					expect(view.citizens).notTo(beNil())
 				}
+				it("sets filter ranges") {
+					expect(view.setRangesWasCalled).to(beTrue())
+				}
 			}
 
 			context ("when a citizen is selected") {
@@ -39,6 +42,16 @@ class HomePresenterTests: QuickSpec {
 				}
 				it ("presents citizen detail") {
 					expect(navigation.presentCitizenDetailWasCalledWithCitizen).notTo(beNil())
+				}
+			}
+
+			context("when filters are applied") {
+				beforeEach {
+					view.citizens = nil
+					eventsEmitter.filterAppliedObserver.onNext([.ageRange([1,2])])
+				}
+				it("sets the results of the filter"){
+					expect(view.citizens).notTo(beNil())
 				}
 			}
 		}
@@ -69,6 +82,11 @@ class HomeNavigationMock: HomeNavigation {
 }
 
 class HomeViewMock: HomeView {
+	var setRangesWasCalled = false
+	func setRanges(ageMax: Float, ageMin: Float, heightMax: Float, heightMin: Float, weightMax: Float, weightMin: Float) {
+		setRangesWasCalled = true
+	}
+
 	var citizens : [Citizen]? = nil
 	func setCitizens(_ citizens: [Citizen]) {
 		self.citizens = citizens
@@ -76,6 +94,10 @@ class HomeViewMock: HomeView {
 }
 
 class HomeEventsEmitterDouble: HomeViewEventsEmitter {
+	var filterAppliedObservable: Observable<[BrastlewarkApp.Filter]> { return _filterAppliedObservable }
+	var filterAppliedObserver: AnyObserver<[BrastlewarkApp.Filter]>!
+	private var _filterAppliedObservable: Observable<[BrastlewarkApp.Filter]>!
+
 	var citizenSelectedObservable: Observable<Citizen> { return _citizenSelectedObservable }
 	var citizenSelectedObserver : AnyObserver<Citizen>!
 	private var _citizenSelectedObservable: Observable<Citizen>!
@@ -83,6 +105,11 @@ class HomeEventsEmitterDouble: HomeViewEventsEmitter {
 	init () {
 		_citizenSelectedObservable = Observable.create() { observer in
 			self.citizenSelectedObserver = observer
+			return Disposables.create()
+		}
+
+		_filterAppliedObservable = Observable.create() { observer in
+			self.filterAppliedObserver = observer
 			return Disposables.create()
 		}
 	}

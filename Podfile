@@ -10,6 +10,8 @@ target 'BrastlewarkApp' do
 	pod 'RxCocoa'
 	pod 'Alamofire'
 	pod 'Kingfisher'
+	pod 'SideMenu'
+	pod 'TTRangeSlider'
 	
 	target 'BrastlewarkAppTests' do
 		inherit! :search_paths

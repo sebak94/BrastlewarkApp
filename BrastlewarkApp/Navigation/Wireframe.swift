@@ -40,7 +40,6 @@ class WireframeViewController : UIViewController, ViewControllerWithWireframe {
 }
 
 class Wireframe {
-	//TODO: remove unused methods
 	var viewController : UIViewController? {
 		didSet {
 			if var wireframeVC = viewController as? ViewControllerWithWireframe {
@@ -52,12 +51,9 @@ class Wireframe {
 		return self.viewController?.navigationController as? BaseNavigationController
 	}
 
-	var waitingPopupController: UIAlertController?
 	var navigation: Navigation
 	var presenting : Wireframe? = nil
 	weak var presentedBy : Wireframe? = nil
-	weak var parent: Wireframe? = nil
-	var children: [Wireframe] = []
 
 	required init(navigation: Navigation) {
 		self.navigation = navigation
@@ -74,90 +70,6 @@ class Wireframe {
 		navigation.rootWireframe = self
 	}
 
-	// Modal
-	func present( over: Wireframe, animated: Bool = true, completion: (() -> Void)? = nil ) throws {
-		guard let selfVC = self.viewController else { throw WireframePresentationError.nilSelfViewController }
-		guard let overVC = over.viewController else { throw WireframePresentationError.nilOverViewController }
-
-		overVC.present( selfVC, animated: animated, completion: completion )
-
-		over.presenting  = self
-		self.presentedBy = over
-	}
-
-	func presentInNavigation( over: Wireframe, animated: Bool = true, completion: (() -> Void)? = nil ) throws {
-		guard let overVC = over.viewController else { throw WireframePresentationError.nilOverViewController }
-
-		let selfNVC = try createNavigationController()
-		overVC.present( selfNVC, animated: animated, completion: completion )
-
-		over.presenting  = self
-		self.presentedBy = over
-	}
-    
-    func presentModally (over: Wireframe, animated: Bool = true, completion: (() -> Void)? = nil) throws {
-        guard let overVC = over.viewController else { return }
-        guard let selfVC = self.viewController else { throw WireframePresentationError.nilSelfViewController }
-        
-        selfVC.modalPresentationStyle = .overCurrentContext
-        selfVC.modalTransitionStyle = .crossDissolve
-        
-        overVC.present(selfVC, animated: animated, completion: completion)
-        
-        over.presenting = self
-        self.presentedBy = over
-    }
-	
-	func presentFullscreen (over: Wireframe, animated: Bool = true, completion: (() -> Void)? = nil) throws {
-		guard let overVC = navigation.window.rootViewController else { return }
-		guard let selfVC = self.viewController else { throw WireframePresentationError.nilSelfViewController }
-		
-		selfVC.modalPresentationStyle = .overCurrentContext
-		selfVC.modalTransitionStyle = .crossDissolve
-		
-		overVC.present(selfVC, animated: animated, completion: completion)
-		
-		over.presenting = self
-		self.presentedBy = over
-	}
-	
-	func presentFullscreenInNavigation (
-		over: Wireframe, animated: Bool = true, completion: (() -> Void)? = nil
-	) throws {
-		guard let overVC = navigation.window.rootViewController else { return }
-		
-		let selfNVC = try createNavigationController()
-		selfNVC.modalPresentationStyle = .overCurrentContext
-		selfNVC.modalTransitionStyle = .crossDissolve
-		
-		overVC.present(selfNVC, animated: animated, completion: completion)
-		
-		over.presenting = self
-		self.presentedBy = over
-	}
-
-	func dismiss (animated: Bool = true, completion: (() -> Void)? = nil ) throws {
-		guard let selfVC = self.viewController else { throw WireframePresentationError.nilSelfViewController }
-
-		selfVC.dismiss(animated: animated, completion: completion)
-
-		self.presentedBy?.presenting = nil
-	}
-	
-	func dismissPresentedWireframe (animated: Bool = true, completion: (() -> Void)? = nil) throws {
-		if let wireframe = presenting {
-			try wireframe.dismiss(animated: animated, completion: completion)
-			return
-		}
-		
-		if let wireframe = children.first(where: { $0.presenting != nil } )?.presenting {
-			try wireframe.dismiss(animated: animated, completion: completion)
-			return
-		}
-		
-		completion? ()
-	}
-
 	// Push Navigation
 	func push( inWireframe: Wireframe, animated: Bool = true ) throws {
 		guard let inVC   = inWireframe.viewController?.navigationController else { throw WireframePresentationError.notNavigationController }
@@ -167,22 +79,6 @@ class Wireframe {
 
 		inWireframe.presenting  = self
 		self.presentedBy = inWireframe
-	}
-
-	@discardableResult
-	func pop( animated: Bool ) throws -> UIViewController? {
-		guard let selfNavigationVC = self.viewController?.navigationController else { throw WireframePresentationError.notNavigationController }
-
-		return selfNavigationVC.popViewController( animated: animated )
-	}
-
-	@discardableResult
-	func popToRoot (animated: Bool = true) throws -> [UIViewController]? {
-		guard let selfNavigationVC = self.viewController?.navigationController else {
-			throw WireframePresentationError.notNavigationController
-		}
-
-		return selfNavigationVC.popToRootViewController(animated: animated)
 	}
 	
 	func createNavigationController () throws -> BaseNavigationController {
@@ -205,47 +101,6 @@ class Wireframe {
 
 	func viewControllerWasPopped () {
 		isPoppingViewController = true
-	}
-	
-	// MARK: Parent / Child wireframe
-	func addChildWireframe (_ wireframe: Wireframe) throws {
-		guard let selfVC = viewController else { throw WireframePresentationError.nilSelfViewController }
-		guard let childVC = wireframe.viewController else { throw WireframePresentationError.nilChildViewController }
-		
-		wireframe.parent = self
-		children.append(wireframe)
-		
-		selfVC.addChildViewController(childVC)
-	}
-	
-	func removeAllChildren (completion: (() -> Void)? = nil) throws {
-		let childrenToRemove = self.children
-		var areChildrenPresenting = false
-
-		try childrenToRemove.forEach { child in
-			if let presentingWireframe = child.presenting {
-				areChildrenPresenting = true
-				try? presentingWireframe.dismiss(animated: false, completion: completion)
-			}
-
-			try child.removeFromParentWireframe()
-		}
-
-		if !areChildrenPresenting { completion? () }
-	}
-	
-	func removeFromParentWireframe () throws {
-		guard let selfVC = viewController else { throw WireframePresentationError.nilSelfViewController }
-		
-		selfVC.removeFromParentViewController()
-		
-		self.parent?.removeChildWireframe(self)
-		self.parent = nil
-	}
-	
-	internal func removeChildWireframe (_ wireframe: Wireframe) {
-		guard let childIndex = children.index(of: wireframe) else { return }
-		children.remove(at: childIndex)
 	}
 }
 

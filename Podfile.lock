@@ -19,6 +19,8 @@ PODS:
     - RxBlocking (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
+  - SideMenu (4.0.0)
+  - TTRangeSlider (1.0.6)
   - URITemplate (2.0.3)
 
 DEPENDENCIES:
@@ -31,6 +33,8 @@ DEPENDENCIES:
   - RxCocoa
   - RxNimble
   - RxSwift
+  - SideMenu
+  - TTRangeSlider
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -43,6 +47,8 @@ SPEC REPOS:
     - RxCocoa
     - RxNimble
     - RxSwift
+    - SideMenu
+    - TTRangeSlider
     - URITemplate
 
 SPEC CHECKSUMS:
@@ -55,8 +61,10 @@ SPEC CHECKSUMS:
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxNimble: e5a34bf3b18d85406fc2a6e2cbc73aa2b4a858f0
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  TTRangeSlider: 78188bea83f6471a06f75adbc88da5e990baeafe
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 76aeae5c6d560c451d2f2774641e146deca955a1
+PODFILE CHECKSUM: e9e52b5801397cf7a31b798d04bcf27b48dc9c64
 
 COCOAPODS: 1.5.3

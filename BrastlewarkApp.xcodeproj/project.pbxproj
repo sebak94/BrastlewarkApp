@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9AF2131F7EA00DB113B /* AppDelegate.swift */; };
-		5542E9B72131F7EA00DB113B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B62131F7EA00DB113B /* Assets.xcassets */; };
 		5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */; };
 		5542E9D42131FBEC00DB113B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9D32131FBEC00DB113B /* Api.swift */; };
 		5542E9D62131FCD700DB113B /* RxApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9D52131FCD700DB113B /* RxApi.swift */; };
@@ -53,6 +52,9 @@
 		5542EA372133AABA00DB113B /* CitizenDetailWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */; };
 		556D87DF2136110800AAA1F7 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87DE2136110800AAA1F7 /* StringHelper.swift */; };
 		556D87E22136117800AAA1F7 /* CitizenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */; };
+		556D87E9213655B000AAA1F7 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87E7213655B000AAA1F7 /* FilterViewController.swift */; };
+		556D87EA213655B000AAA1F7 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556D87E8213655B000AAA1F7 /* FilterViewController.xib */; };
+		556D87EC213671F500AAA1F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556D87EB213671F400AAA1F7 /* Assets.xcassets */; };
 		5585ECD12134EC8E0041B702 /* UIImageViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */; };
 		6D669A2AC4125C477EF952BB /* Pods_BrastlewarkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */; };
 		BBB4C5A3FCA53E421FAEB84E /* Pods_BrastlewarkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */; };
@@ -73,7 +75,6 @@
 		35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9AC2131F7EA00DB113B /* BrastlewarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrastlewarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9AF2131F7EA00DB113B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5542E9B62131F7EA00DB113B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5542E9B92131F7EA00DB113B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5542E9BB2131F7EA00DB113B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5542E9C02131F7EA00DB113B /* BrastlewarkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrastlewarkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +122,9 @@
 		5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenDetailWireframeTests.swift; sourceTree = "<group>"; };
 		556D87DE2136110800AAA1F7 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenRepositoryTests.swift; sourceTree = "<group>"; };
+		556D87E7213655B000AAA1F7 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		556D87E8213655B000AAA1F7 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		556D87EB213671F400AAA1F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewHelper.swift; sourceTree = "<group>"; };
 		A4B0E6F7ED88EEFC40860CE5 /* Pods-BrastlewarkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C7EACD654C7512C601B09 /* Pods_BrastlewarkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,8 +193,8 @@
 				5542E9D12131FB9200DB113B /* Entities */,
 				5542E9D02131FB8A00DB113B /* Interactors */,
 				5542E9CF2131FB7B00DB113B /* Api */,
+				556D87EB213671F400AAA1F7 /* Assets.xcassets */,
 				5542E9AF2131F7EA00DB113B /* AppDelegate.swift */,
-				5542E9B62131F7EA00DB113B /* Assets.xcassets */,
 				5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */,
 				5542E9BB2131F7EA00DB113B /* Info.plist */,
 			);
@@ -319,6 +323,7 @@
 		5542EA002133216100DB113B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				556D87E62136559200AAA1F7 /* FilterView */,
 				5542EA1521335CF000DB113B /* HomeWireframe.swift */,
 				5542EA1721335CFB00DB113B /* HomePresenter.swift */,
 				5542EA1921335D0800DB113B /* HomeViewController.swift */,
@@ -415,6 +420,15 @@
 				556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		556D87E62136559200AAA1F7 /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				556D87E7213655B000AAA1F7 /* FilterViewController.swift */,
+				556D87E8213655B000AAA1F7 /* FilterViewController.xib */,
+			);
+			path = FilterView;
 			sourceTree = "<group>";
 		};
 		CD6A17BAE300435D0F132A25 /* Pods */ = {
@@ -518,9 +532,10 @@
 				5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */,
 				5542EA28213362D800DB113B /* CitizensCollectionViewCell.xib in Resources */,
 				5542EA332133883C00DB113B /* CitizenDetailViewController.xib in Resources */,
-				5542E9B72131F7EA00DB113B /* Assets.xcassets in Resources */,
 				5542EA1C21335D0800DB113B /* HomeViewController.xib in Resources */,
 				5542E9D92131FE6400DB113B /* BrastlewarkApi.plist in Resources */,
+				556D87EA213655B000AAA1F7 /* FilterViewController.xib in Resources */,
+				556D87EC213671F500AAA1F7 /* Assets.xcassets in Resources */,
 				5542E9FC213238C800DB113B /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,6 +579,8 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/TTRangeSlider/TTRangeSlider.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -571,6 +588,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTRangeSlider.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -656,6 +675,7 @@
 				5542E9F12132373100DB113B /* Wireframe.swift in Sources */,
 				5542E9F8213238B400DB113B /* SplashEventsHandler.swift in Sources */,
 				5585ECD12134EC8E0041B702 /* UIImageViewHelper.swift in Sources */,
+				556D87E9213655B000AAA1F7 /* FilterViewController.swift in Sources */,
 				5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */,
 				5542E9EF2132373100DB113B /* BaseNavigationController.swift in Sources */,
 				5542E9F6213238AB00DB113B /* SplashWireframe.swift in Sources */,

@@ -7,7 +7,20 @@
 		<key>BrastlewarkApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>14</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5542E9AB2131F7E900DB113B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5542E9BF2131F7EA00DB113B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
