@@ -35,6 +35,7 @@ class HomeViewController:
 	FilterViewDelegate
 {
 	@IBOutlet weak var citizensCollectionView: CitizensCollectionView!
+	@IBOutlet weak var emptyView: UIView!
 
 	var citizenSelectedObservable: Observable<Citizen> {
 		return citizensCollectionView.selectedCitizenObservable
@@ -78,7 +79,8 @@ class HomeViewController:
 		]
 		menuRightNavigationController.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 		menuRightNavigationController.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-
+		menuRightNavigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+		menuRightNavigationController.navigationBar.shadowImage = UIImage()
 		SideMenuManager.default.menuRightNavigationController = menuRightNavigationController
 		SideMenuManager.default.menuFadeStatusBar = false
 		SideMenuManager.default.menuWidth = UIScreen.main.bounds.width * 0.85
@@ -100,6 +102,7 @@ class HomeViewController:
 	}
 	
 	func setCitizens( _ citizens: [Citizen] ) {
+		emptyView.isHidden = !(citizens.count == 0)
 		citizensCollectionView.citizens = citizens
 		citizensCollectionView.reloadData()
 	}
