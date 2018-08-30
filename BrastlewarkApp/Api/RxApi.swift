@@ -9,6 +9,8 @@
 import RxSwift
 import Alamofire
 
+// This is a wrapper to make my Api class reactive, so i can subscribe to requests and get them
+// as observables
 class RxApi {
 	let api: Api
 

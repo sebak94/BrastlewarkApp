@@ -349,8 +349,7 @@
 			children = (
 				5542EA062133225C00DB113B /* CitizenTests.swift */,
 			);
-			name = Entities;
-			path = "New Group";
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		5542EA08213352D900DB113B /* Factories */ = {

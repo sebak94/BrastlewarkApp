@@ -8,6 +8,8 @@
 
 import Foundation
 
+// As a viewObserver, Observer presenter is notified when the view has finished loading
+// so it can subscribe to its reactive events as well as pass information.
 class ObserverPresenter: ViewObserver {
 	func subscribeToViewEvents() {
 		fatalError ("Must be implemented in subclass")

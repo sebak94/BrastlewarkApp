@@ -12,6 +12,7 @@ import Kingfisher
 protocol CitizenDetailView {
 	func setCitizenInformation( _ citizen: Citizen )
 }
+
 //	I decided to use a scroll view so i could show the image full size, and still display
 //	the information in a nice size. I placed the image at the bottom because if the image was first,
 //	citizen information was at the bottom of the scroll view and the user could miss it.
@@ -27,10 +28,6 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 	@IBOutlet weak var heightLabel: UILabel!
 	@IBOutlet weak var ageLabel: UILabel!
 	@IBOutlet weak var citizenImageView: UIImageView!
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
 
 	func setCitizenInformation(_ citizen: Citizen) {
 		navigationItem.title = citizen.name

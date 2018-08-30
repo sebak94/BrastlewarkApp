@@ -102,7 +102,7 @@ class HomeViewController:
 	}
 	
 	func setCitizens( _ citizens: [Citizen] ) {
-		emptyView.isHidden = !(citizens.count == 0)
+		emptyView.isHidden = !(citizens.count == 0) // Shows a view notifying when there were no results
 		citizensCollectionView.citizens = citizens
 		citizensCollectionView.reloadData()
 	}

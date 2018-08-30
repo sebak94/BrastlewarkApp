@@ -10,6 +10,7 @@ import Alamofire
 
 typealias ApiMethod = Alamofire.HTTPMethod
 
+// This is mostly a wrapper for Alamofire requests, just to tidy up things
 class Api {
 	let baseURL: URL
 	

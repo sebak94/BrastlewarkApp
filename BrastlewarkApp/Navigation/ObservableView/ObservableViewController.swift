@@ -13,6 +13,10 @@ protocol ViewObserver: class {
 	func subscribeToViewEvents ()
 }
 
+// As an observable view controller, this class notifies its viewObserver in the events defined
+// if the presenter is subscribed to them.
+// This class also tells the presenter when it has finished loading so the presenter starts
+// setting view attributes.
 class ObservableViewController: WireframeViewController {
 	weak var viewObserver: ViewObserver?
 

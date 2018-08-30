@@ -17,6 +17,7 @@ struct ApiSettings {
 	let baseURL: URL
 }
 
+// Just a particular instance of Api which knows how to instanciate itself with the correct configuration
 class BrastlewarkApi: Api {
 	static let shared: BrastlewarkApi = try! BrastlewarkApi.forCurrentEnvironment()
 }

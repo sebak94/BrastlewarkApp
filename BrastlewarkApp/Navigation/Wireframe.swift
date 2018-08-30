@@ -39,6 +39,7 @@ class WireframeViewController : UIViewController, ViewControllerWithWireframe {
 	}
 }
 
+// This class is responsible of managing viewControllers displayed in its navigation window
 class Wireframe {
 	var viewController : UIViewController? {
 		didSet {

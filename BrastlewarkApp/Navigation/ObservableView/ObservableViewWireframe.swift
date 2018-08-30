@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Base Wireframe using with a viewController and a presenter.
+// The particularity of this class is that the presenter is set as the views "observer"
 class ObservableViewWireframe<P: ObserverPresenter>: Wireframe {
 	let presenter: P
 	

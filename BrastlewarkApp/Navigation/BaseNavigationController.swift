@@ -29,6 +29,7 @@ class BaseNavigationController: UINavigationController {
 		]
 	}
 
+	// I use this method to remove the default back button.
 	override func pushViewController( _ viewController: UIViewController, animated: Bool ) {
 		setUpBackNavigationButton()
 
