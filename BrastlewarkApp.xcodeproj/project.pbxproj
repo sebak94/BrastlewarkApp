@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5508ABBB21378C30006ED7FD /* DoubleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508ABBA21378C30006ED7FD /* DoubleHelper.swift */; };
 		5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9AF2131F7EA00DB113B /* AppDelegate.swift */; };
 		5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */; };
 		5542E9D42131FBEC00DB113B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9D32131FBEC00DB113B /* Api.swift */; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		206F06AC6B35692ADBF09C40 /* Pods-BrastlewarkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.release.xcconfig"; sourceTree = "<group>"; };
 		35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5508ABBA21378C30006ED7FD /* DoubleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleHelper.swift; sourceTree = "<group>"; };
 		5542E9AC2131F7EA00DB113B /* BrastlewarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrastlewarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9AF2131F7EA00DB113B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5542E9B92131F7EA00DB113B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				5542E9E12132023700DB113B /* DictionaryHelper.swift */,
 				5585ECD02134EC8E0041B702 /* UIImageViewHelper.swift */,
 				556D87DE2136110800AAA1F7 /* StringHelper.swift */,
+				5508ABBA21378C30006ED7FD /* DoubleHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				5542E9F32132373100DB113B /* ObserverPresenter.swift in Sources */,
 				5542E9E5213233C100DB113B /* CitizenRepository.swift in Sources */,
 				5542E9F12132373100DB113B /* Wireframe.swift in Sources */,
+				5508ABBB21378C30006ED7FD /* DoubleHelper.swift in Sources */,
 				5542E9F8213238B400DB113B /* SplashEventsHandler.swift in Sources */,
 				5585ECD12134EC8E0041B702 /* UIImageViewHelper.swift in Sources */,
 				556D87E9213655B000AAA1F7 /* FilterViewController.swift in Sources */,

@@ -36,8 +36,8 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 		navigationItem.title = citizen.name
 		friendsLabel.text = citizen.friends.joined(separator: ", ")
 		hairColorLabel.text = citizen.hairColor
-		weightLabel.text = citizen.weight.description
-		heightLabel.text = citizen.height.description
+		weightLabel.text = citizen.weight.description(decimalPlaces: 2)
+		heightLabel.text = citizen.height.description(decimalPlaces: 2)
 		ageLabel.text = citizen.age.description
 		setCitizenImage(url: citizen.imageURL)
 		setProfessions(citizen.professions)
