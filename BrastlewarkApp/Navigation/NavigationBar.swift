@@ -28,8 +28,8 @@ class NavigationBar: UINavigationBar {
 	}
 
 	func applyStyles() {
-		backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-		barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		backgroundColor = AppStyle.default.colors.background
+		barTintColor = AppStyle.default.colors.background
 	}
 }
 

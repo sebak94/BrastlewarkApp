@@ -22,10 +22,9 @@ class BaseNavigationController: UINavigationController {
 		
 		removeBottomBorder()
 
-		guard let font = UIFont(name: "Futura", size: 21) else { return }
 		self.navigationBar.titleTextAttributes = [
-			NSAttributedStringKey.font: font,
-			NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.3978005052, green: 0.3978720903, blue: 0.3977910876, alpha: 1)
+			NSAttributedStringKey.font: AppStyle.default.fonts.futura,
+			NSAttributedStringKey.foregroundColor: AppStyle.default.colors.foreground
 		]
 	}
 
@@ -49,7 +48,7 @@ class BaseNavigationController: UINavigationController {
 	func setUpBackNavigationButton() {
 		guard let navItem = self.topViewController?.navigationItem else { return }
 		navItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-		navItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+		navItem.backBarButtonItem?.tintColor = AppStyle.default.colors.foreground
 	}
 	
 	func removeBottomBorder() {

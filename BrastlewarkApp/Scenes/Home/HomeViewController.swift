@@ -67,18 +67,17 @@ class HomeViewController:
 			target: self,
 			action: #selector(filterTapped)
 		)
-		navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+		navigationItem.rightBarButtonItem?.tintColor = AppStyle.default.colors.foreground
 
 		let menuRightNavigationController = UISideMenuNavigationController(
 			rootViewController: filterViewController
 		)
-		guard let font = UIFont(name: "Futura", size: 21) else { return }
 		menuRightNavigationController.navigationBar.titleTextAttributes = [
-			NSAttributedStringKey.font: font,
-			NSAttributedStringKey.foregroundColor: #colorLiteral(red: 0.3978005052, green: 0.3978720903, blue: 0.3977910876, alpha: 1)
+			NSAttributedStringKey.font: AppStyle.default.fonts.futura,
+			NSAttributedStringKey.foregroundColor: AppStyle.default.colors.foreground
 		]
-		menuRightNavigationController.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-		menuRightNavigationController.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		menuRightNavigationController.navigationBar.backgroundColor = AppStyle.default.colors.background
+		menuRightNavigationController.navigationBar.barTintColor = AppStyle.default.colors.background
 		menuRightNavigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 		menuRightNavigationController.navigationBar.shadowImage = UIImage()
 		SideMenuManager.default.menuRightNavigationController = menuRightNavigationController

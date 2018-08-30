@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5508ABBB21378C30006ED7FD /* DoubleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508ABBA21378C30006ED7FD /* DoubleHelper.swift */; };
+		5508ABBE21379A74006ED7FD /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508ABBD21379A74006ED7FD /* AppStyle.swift */; };
 		5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9AF2131F7EA00DB113B /* AppDelegate.swift */; };
 		5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5542E9B82131F7EA00DB113B /* LaunchScreen.storyboard */; };
 		5542E9D42131FBEC00DB113B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E9D32131FBEC00DB113B /* Api.swift */; };
@@ -75,6 +76,7 @@
 		206F06AC6B35692ADBF09C40 /* Pods-BrastlewarkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrastlewarkApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrastlewarkApp/Pods-BrastlewarkApp.release.xcconfig"; sourceTree = "<group>"; };
 		35FBA996BC72DE35D2AE75C5 /* Pods_BrastlewarkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrastlewarkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5508ABBA21378C30006ED7FD /* DoubleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleHelper.swift; sourceTree = "<group>"; };
+		5508ABBD21379A74006ED7FD /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		5542E9AC2131F7EA00DB113B /* BrastlewarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrastlewarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542E9AF2131F7EA00DB113B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5542E9B92131F7EA00DB113B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5508ABBC21379A5D006ED7FD /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				5508ABBD21379A74006ED7FD /* AppStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		5542E9A32131F7E900DB113B = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		5542E9AE2131F7EA00DB113B /* BrastlewarkApp */ = {
 			isa = PBXGroup;
 			children = (
+				5508ABBC21379A5D006ED7FD /* Styles */,
 				5542E9FD21323C3300DB113B /* States */,
 				5542E9E7213235EA00DB113B /* Navigation */,
 				5542E9E3213233AB00DB113B /* Repositories */,
@@ -680,6 +691,7 @@
 				5585ECD12134EC8E0041B702 /* UIImageViewHelper.swift in Sources */,
 				556D87E9213655B000AAA1F7 /* FilterViewController.swift in Sources */,
 				5542E9B02131F7EA00DB113B /* AppDelegate.swift in Sources */,
+				5508ABBE21379A74006ED7FD /* AppStyle.swift in Sources */,
 				5542E9EF2132373100DB113B /* BaseNavigationController.swift in Sources */,
 				5542E9F6213238AB00DB113B /* SplashWireframe.swift in Sources */,
 				5542E9F42132373100DB113B /* ObservableViewController.swift in Sources */,

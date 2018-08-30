@@ -62,7 +62,7 @@ class FilterViewController: UIViewController {
 			target: self,
 			action: #selector(clearTapped)
 		)
-		navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+		navigationItem.rightBarButtonItem?.tintColor = AppStyle.default.colors.foreground
 	}
 
 	@objc func clearTapped() {
