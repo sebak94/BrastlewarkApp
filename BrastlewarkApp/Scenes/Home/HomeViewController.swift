@@ -52,6 +52,7 @@ class HomeViewController:
 		super.viewDidLoad()
 		navigationItem.title = "Brastlewark"
 		setupFilterView()
+		setupSideMenu()
 	}
 
 	func createFilterAppliedObservable () {
@@ -68,23 +69,27 @@ class HomeViewController:
 			action: #selector(filterTapped)
 		)
 		navigationItem.rightBarButtonItem?.tintColor = AppStyle.default.colors.foreground
+		filterViewController.delegate = self
+	}
 
-		let menuRightNavigationController = UISideMenuNavigationController(
+	func setupSideMenu() {
+		let menuNavigationController = UISideMenuNavigationController(
 			rootViewController: filterViewController
 		)
-		menuRightNavigationController.navigationBar.titleTextAttributes = [
+		menuNavigationController.navigationBar.titleTextAttributes = [
 			NSAttributedStringKey.font: AppStyle.default.fonts.futura,
 			NSAttributedStringKey.foregroundColor: AppStyle.default.colors.foreground
 		]
-		menuRightNavigationController.navigationBar.backgroundColor = AppStyle.default.colors.background
-		menuRightNavigationController.navigationBar.barTintColor = AppStyle.default.colors.background
-		menuRightNavigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-		menuRightNavigationController.navigationBar.shadowImage = UIImage()
-		SideMenuManager.default.menuRightNavigationController = menuRightNavigationController
+		menuNavigationController.navigationBar.backgroundColor = AppStyle.default.colors.background
+		menuNavigationController.navigationBar.barTintColor = AppStyle.default.colors.background
+		menuNavigationController.navigationBar.setBackgroundImage(
+			UIImage(), for: UIBarMetrics.default
+		)
+		menuNavigationController.navigationBar.shadowImage = UIImage()
+		SideMenuManager.default.menuRightNavigationController = menuNavigationController
 		SideMenuManager.default.menuFadeStatusBar = false
 		SideMenuManager.default.menuWidth = UIScreen.main.bounds.width * 0.85
 		SideMenuManager.default.menuEnableSwipeGestures = false
-		filterViewController.delegate = self
 	}
 
 	func filtersApplied(with filters: [Filter]) {
@@ -101,7 +106,8 @@ class HomeViewController:
 	}
 	
 	func setCitizens( _ citizens: [Citizen] ) {
-		emptyView.isHidden = !(citizens.count == 0) // Shows a view notifying when there were no results
+		//Shows a view notifying when there were no results
+		emptyView.isHidden = !(citizens.count == 0)
 		citizensCollectionView.citizens = citizens
 		citizensCollectionView.reloadData()
 	}

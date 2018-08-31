@@ -32,8 +32,6 @@ class CitizensCollectionView: UICollectionView {
 	}
 }
 
-extension CitizensCollectionView: UICollectionViewDelegate {}
-
 extension CitizensCollectionView: UICollectionViewDataSource {
 	func collectionView(
 		_ collectionView: UICollectionView,

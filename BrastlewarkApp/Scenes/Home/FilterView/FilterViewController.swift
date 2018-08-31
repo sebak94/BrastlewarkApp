@@ -99,9 +99,15 @@ class FilterViewController: UIViewController {
 
 	@objc func applyButtonWasTapped() {
 		let filters = [
-			Filter.ageRange([Int(ageRangeSlider.selectedMinimum),Int(ageRangeSlider.selectedMaximum)]),
-			Filter.heightRange([Double(heightRangeSlider.selectedMinimum),Double(heightRangeSlider.selectedMaximum)]),
-			Filter.weightRange([Double(weightRangeSlider.selectedMinimum),Double(weightRangeSlider.selectedMaximum)]),
+			Filter.ageRange(
+				[Int(ageRangeSlider.selectedMinimum),Int(ageRangeSlider.selectedMaximum)]
+			),
+			Filter.heightRange(
+				[Double(heightRangeSlider.selectedMinimum),Double(heightRangeSlider.selectedMaximum)]
+			),
+			Filter.weightRange(
+				[Double(weightRangeSlider.selectedMinimum),Double(weightRangeSlider.selectedMaximum)]
+			),
 			Filter.friend(friendTextField.text ?? ""),
 			Filter.profession(professionTextField.text ?? ""),
 			Filter.name(nameTextField.text ?? ""),
