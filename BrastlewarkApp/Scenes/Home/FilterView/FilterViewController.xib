@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,12 +49,9 @@
                     <size key="shadowOffset" width="1" height="0.0"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeD-WU-s8B" customClass="TTRangeSlider">
-                    <rect key="frame" x="16" y="232" width="288" height="48"/>
+                    <rect key="frame" x="16" y="232" width="288" height="45.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" red="0.396078431372549" green="0.396078431372549" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="rbf-i8-y9h"/>
-                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableStep" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="step">
@@ -62,7 +60,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yN-LY-El4">
-                    <rect key="frame" x="16" y="296" width="50.5" height="19.5"/>
+                    <rect key="frame" x="16" y="293.5" width="50.5" height="19.5"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                     <color key="textColor" red="0.39784263959999999" green="0.39784263959999999" blue="0.39784263959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -70,12 +68,9 @@
                     <size key="shadowOffset" width="1" height="0.0"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaJ-Ya-efW" customClass="TTRangeSlider">
-                    <rect key="frame" x="16" y="323" width="288" height="48"/>
+                    <rect key="frame" x="16" y="320.5" width="288" height="45.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="HZk-Ok-9t5"/>
-                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableStep" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="step">
@@ -84,7 +79,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4b-xY-Iwc">
-                    <rect key="frame" x="16" y="387" width="55" height="20"/>
+                    <rect key="frame" x="16" y="382" width="55" height="20"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                     <color key="textColor" red="0.39784263959999999" green="0.39784263959999999" blue="0.39784263959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -92,12 +87,9 @@
                     <size key="shadowOffset" width="1" height="0.0"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5D7-d6-cEj" customClass="TTRangeSlider">
-                    <rect key="frame" x="16" y="415" width="288" height="48"/>
+                    <rect key="frame" x="16" y="410" width="288" height="45.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="GKt-Wk-RaL"/>
-                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="enableStep" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="step">
@@ -124,10 +116,10 @@
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfY-u3-lGy">
-                    <rect key="frame" x="16" y="492" width="288" height="60"/>
+                    <rect key="frame" x="16" y="501" width="288" height="51"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Apply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPS-Dc-UWK">
-                            <rect key="frame" x="120" y="19" width="48" height="22.5"/>
+                            <rect key="frame" x="120" y="14.5" width="48" height="22.5"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
@@ -138,7 +130,6 @@
                     <color key="backgroundColor" red="0.51545483560498828" green="0.51296471562622026" blue="0.51794495558375631" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstItem="LPS-Dc-UWK" firstAttribute="centerX" secondItem="QfY-u3-lGy" secondAttribute="centerX" id="7En-7x-UHR"/>
-                        <constraint firstAttribute="height" constant="60" id="MoF-Mx-hOD"/>
                         <constraint firstItem="LPS-Dc-UWK" firstAttribute="centerY" secondItem="QfY-u3-lGy" secondAttribute="centerY" id="rXh-vI-EMy"/>
                     </constraints>
                 </view>
@@ -152,13 +143,17 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QfY-u3-lGy" secondAttribute="trailing" constant="16" id="8Fx-Yk-Fdg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5D7-d6-cEj" secondAttribute="trailing" constant="16" id="8lf-pi-C4J"/>
                 <constraint firstItem="jeD-WU-s8B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ARM-kz-Zv3"/>
+                <constraint firstItem="OaJ-Ya-efW" firstAttribute="height" secondItem="jeD-WU-s8B" secondAttribute="height" id="FUq-od-Lzk"/>
+                <constraint firstItem="5D7-d6-cEj" firstAttribute="height" secondItem="OaJ-Ya-efW" secondAttribute="height" id="KoY-WX-ZlC"/>
                 <constraint firstItem="Pss-fW-WQu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MrX-Rp-swO"/>
+                <constraint firstItem="QfY-u3-lGy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.09" id="MzQ-Dl-mwi"/>
                 <constraint firstItem="xNX-zo-B7D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="O9W-wn-NlE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xNX-zo-B7D" secondAttribute="trailing" constant="16" id="OUt-Ad-Nfi"/>
                 <constraint firstItem="5D7-d6-cEj" firstAttribute="top" secondItem="M4b-xY-Iwc" secondAttribute="bottom" constant="8" id="P75-mR-qKT"/>
                 <constraint firstItem="M4b-xY-Iwc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="P86-at-DVP"/>
                 <constraint firstItem="84g-36-PSh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Qd9-qi-B40"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QfY-u3-lGy" secondAttribute="bottom" constant="16" id="Qdb-jq-MsQ"/>
+                <constraint firstItem="jeD-WU-s8B" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.08" id="VU6-vK-SZT"/>
                 <constraint firstItem="xNX-zo-B7D" firstAttribute="top" secondItem="84g-36-PSh" secondAttribute="bottom" constant="16" id="VjW-RA-Ozx"/>
                 <constraint firstItem="BTV-3x-ugF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="aA5-On-AfW"/>
                 <constraint firstItem="QfY-u3-lGy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ejo-Kl-ndD"/>

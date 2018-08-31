@@ -84,8 +84,7 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 			else { return }
 			sSelf.citizenImageView.layer.cornerRadius = 20
 			let ratio = image.size.height / image.size.width
-			sSelf.citizenImageViewHeightConstraint.constant =
-				sSelf.citizenImageView.frame.width * ratio
+			sSelf.citizenImageViewHeightConstraint.constant = (UIScreen.main.bounds.width - 32) * ratio
 			sSelf.view.layoutSubviews()
 		}
 	}
