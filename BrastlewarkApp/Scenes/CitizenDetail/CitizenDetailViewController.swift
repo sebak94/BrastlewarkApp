@@ -14,10 +14,12 @@ protocol CitizenDetailView {
 }
 
 //	I decided to use a scroll view so i could show the image full size, and still display
-//	the information in a nice size. I placed the image at the bottom because if the image was first,
-//	citizen information was at the bottom of the scroll view and the user could miss it.
+//	the information in a nice size. I placed the image at the bottom because if the image was
+//	first, citizen information was at the bottom of the scroll view and the user could miss it.
 class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 
+	@IBOutlet weak var friendsViewTopConstraint: NSLayoutConstraint!
+	@IBOutlet weak var citizenImageViewTopConstraint: NSLayoutConstraint!
 	@IBOutlet weak var friendsTitleLabel: UILabel!
 	@IBOutlet weak var professionsTitleLabel: UILabel!
 	@IBOutlet weak var citizenImageViewHeightConstraint: NSLayoutConstraint!
@@ -28,7 +30,12 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 	@IBOutlet weak var heightLabel: UILabel!
 	@IBOutlet weak var ageLabel: UILabel!
 	@IBOutlet weak var citizenImageView: UIImageView!
+	@IBOutlet weak var professionsView: UIView!
+	@IBOutlet weak var basicInfoView: UIView!
+	@IBOutlet weak var friendsView: UIView!
 
+	var originalImageView : UIImageView?
+	
 	func setCitizenInformation(_ citizen: Citizen) {
 		navigationItem.title = citizen.name
 		friendsLabel.text = citizen.friends.joined(separator: ", ")
@@ -39,38 +46,47 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 		setCitizenImage(url: citizen.imageURL)
 		setProfessions(citizen.professions)
 		setFriends(citizen.friends)
+		setupBackgroundViews()
+	}
+
+	func setupBackgroundViews() {
+		friendsView.layer.cornerRadius = 20
+		basicInfoView.layer.cornerRadius = 20
+		professionsView.layer.cornerRadius = 20
 	}
 
 	func setProfessions(_ professions: [String]) {
 		guard professions.count > 0 else {
 			professionsLabel.isHidden = true
 			professionsTitleLabel.isHidden = true
+			professionsView.isHidden = true
+			friendsViewTopConstraint.constant = -90
 			return
 		}
-		professionsLabel.text = professions.joined(separator: ", ")
+		professionsLabel.text = professions.joined(separator: " | ")
 	}
 
 	func setFriends(_ friends: [String]) {
 		guard friends.count > 0 else {
 			friendsLabel.isHidden = true
 			friendsTitleLabel.isHidden = true
+			friendsView.isHidden = true
+			citizenImageViewTopConstraint.constant = -60
 			return
 		}
-		friendsLabel.text = friends.joined(separator: ", ")
+		friendsLabel.text = friends.joined(separator: " | ")
 	}
 
-	//I did all this setup for the imageview to be able to display the whole image full width
 	func setCitizenImage( url: URL ) {
-		citizenImageView.kf.setImage(with: url)
-		let imageViewRect = citizenImageView.contentClippingRect
-		let ratio = imageViewRect.height / imageViewRect.width
-		if imageViewRect.width < UIScreen.main.bounds.width {
-			citizenImageView.contentMode = .scaleAspectFill
-			citizenImageViewHeightConstraint.constant = UIScreen.main.bounds.width * ratio
-		} else {
-			citizenImageView.contentMode = .scaleAspectFit
-			citizenImageViewHeightConstraint.constant = imageViewRect.height
+		citizenImageView.kf.setImage(with: url) { [weak self] image,_,_,_ in
+			guard let sSelf = self,
+					let image = image
+			else { return }
+			sSelf.citizenImageView.layer.cornerRadius = 20
+			let ratio = image.size.height / image.size.width
+			sSelf.citizenImageViewHeightConstraint.constant =
+				sSelf.citizenImageView.frame.width * ratio
+			sSelf.view.layoutSubviews()
 		}
-		view.layoutSubviews()
 	}
 }
