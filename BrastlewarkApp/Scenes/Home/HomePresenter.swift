@@ -14,22 +14,25 @@ class HomePresenter: ObserverPresenter {
 	let state : AppState
 	let view : HomeView
 	let eventsEmitter: HomeViewEventsEmitter
+	let genderInteractor: GetGenderInteractor
 	let disposeBag = DisposeBag()
 
 	init(
 		state: AppState,
 		view: HomeView,
-		eventsEmitter: HomeViewEventsEmitter
+		eventsEmitter: HomeViewEventsEmitter,
+		genderInteractor: GetGenderInteractor
 	) {
 		self.view = view
 		self.eventsEmitter = eventsEmitter
+		self.genderInteractor = genderInteractor
 		self.state = state
 	}
 
 	override func subscribeToViewEvents() {
 		subscribeToCitizenSelectedObservable()
 		subscribeToFilterAppliedObservable()
-		view.setCitizens(state.citizenRepository.citizens.map({CitizenToDisplay(citizen: $0)}))
+		view.setCitizens(state.citizenRepository.citizens.toDisplay())
 		setupFilterViewRanges()
 	}
 
@@ -64,7 +67,13 @@ class HomePresenter: ObserverPresenter {
 	func subscribeToCitizenSelectedObservable() {
 		eventsEmitter.citizenSelectedObservable
 			.subscribe( onNext: { [weak self] citizen in
-				self?.navigation?.presentCitizenDetail(citizen: citizen)
+				guard let sSelf = self,
+						let citizen = sSelf.state.citizenRepository.citizens.filter({$0.id == citizen.id}).first
+					else { return }
+				self?.navigation?.presentCitizenDetail(
+					citizen: citizen,
+					citizenRepository: sSelf.state.citizenRepository
+				)
 			}).disposed( by: disposeBag )
 	}
 
@@ -77,6 +86,6 @@ class HomePresenter: ObserverPresenter {
 
 	func applyFilters(_ filters: [Filter]) {
 		let filteredCitizens = state.citizenRepository.filter(by: filters)
-		view.setCitizens(filteredCitizens.map({CitizenToDisplay(citizen: $0)}))
+		view.setCitizens(filteredCitizens.toDisplay())
 	}
 }

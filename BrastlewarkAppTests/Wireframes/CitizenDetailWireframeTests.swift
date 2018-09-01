@@ -30,7 +30,12 @@ class CitizenDetailWireframeTests: QuickSpec {
 
 	func createWireframe() -> (Navigation, CitizenDetailWireframe) {
 		let navigation = Navigation(window: UIWindow (frame: CGRect.zero))
-		let wireframe = CitizenDetailWireframe(navigation: navigation, citizen: CitizenToDisplay(citizen:CitizenFactory.citizen()))
+		let repo = CitizenRepository(citizens: [])
+		let wireframe = CitizenDetailWireframe(
+			navigation: navigation,
+			citizen: CitizenFactory.citizen(),
+			citizenRepository: repo
+		)
 
 		try! wireframe.setAsRootWireframe(inNavigation: true)
 

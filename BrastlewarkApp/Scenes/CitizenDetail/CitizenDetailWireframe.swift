@@ -11,12 +11,13 @@ import Foundation
 class CitizenDetailWireframe: ObservableViewWireframe<CitizenDetailPresenter> {
 	let citizenDetailPresenter : CitizenDetailPresenter
 
-	required init(navigation: Navigation, citizen: CitizenToDisplay ) {
+	required init(navigation: Navigation, citizen: Citizen, citizenRepository: CitizenRepository ) {
 		let view = CitizenDetailViewController()
 
 		citizenDetailPresenter = CitizenDetailPresenter(
 			citizen: citizen,
-			view: view
+			view: view,
+			genderInteractor: GetGenderInteractor(citizenRepository: citizenRepository)
 		)
 
 		super.init(navigation: navigation, presenter: citizenDetailPresenter)

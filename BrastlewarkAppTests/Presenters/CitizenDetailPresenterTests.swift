@@ -36,8 +36,13 @@ class CitizenDetailPresenterTests: QuickSpec {
 		(
 		CitizenDetailPresenter, CitizenDetailViewMock
 		) {
+			let repo = CitizenRepository(citizens: [])
 			let view = CitizenDetailViewMock()
-			let presenter = CitizenDetailPresenter(citizen: CitizenToDisplay(citizen:CitizenFactory.citizen()), view: view)
+			let presenter = CitizenDetailPresenter(
+				citizen:CitizenFactory.citizen(),
+				view: view,
+				genderInteractor: GetGenderInteractor(citizenRepository: repo)
+			)
 
 			return (presenter, view)
 	}

@@ -63,10 +63,15 @@ class HomePresenterTests: QuickSpec {
 			HomeNavigationMock, HomePresenter, HomeViewMock, HomeEventsEmitterDouble
 		) {
 			let navigation = HomeNavigationMock()
-			let state = AppState(citizenRepository: CitizenRepository(citizens: []))
+			let state = AppState(citizenRepository: CitizenRepository(citizens: [CitizenFactory.citizen()]))
 			let view = HomeViewMock()
 			let eventsEmitter = HomeEventsEmitterDouble()
-			let presenter = HomePresenter(state: state, view: view, eventsEmitter: eventsEmitter)
+			let presenter = HomePresenter(
+				state: state,
+				view: view,
+				eventsEmitter: eventsEmitter,
+				genderInteractor: GetGenderInteractor(citizenRepository: state.citizenRepository)
+			)
 			presenter.navigation = navigation
 
 			return (navigation, presenter, view, eventsEmitter)
@@ -75,8 +80,9 @@ class HomePresenterTests: QuickSpec {
 
 // MARK: Mocks
 class HomeNavigationMock: HomeNavigation {
-	var presentCitizenDetailWasCalledWithCitizen : CitizenToDisplay?
-	func presentCitizenDetail(citizen: CitizenToDisplay) {
+
+	var presentCitizenDetailWasCalledWithCitizen : Citizen?
+	func presentCitizenDetail(citizen: Citizen, citizenRepository: CitizenRepository) {
 		presentCitizenDetailWasCalledWithCitizen = citizen
 	}
 }

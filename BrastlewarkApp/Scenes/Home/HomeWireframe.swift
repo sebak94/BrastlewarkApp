@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeNavigation: class {
-	func presentCitizenDetail(citizen: CitizenToDisplay)
+	func presentCitizenDetail(citizen: Citizen, citizenRepository: CitizenRepository)
 }
 
 class HomeWireframe: ObservableViewWireframe<HomePresenter> {
@@ -17,11 +17,11 @@ class HomeWireframe: ObservableViewWireframe<HomePresenter> {
 
 	required init(navigation: Navigation, state: AppState ) {
 		let view = HomeViewController()
-
 		homePresenter = HomePresenter(
 			state: state,
 			view: view,
-			eventsEmitter: view
+			eventsEmitter: view,
+			genderInteractor: GetGenderInteractor(citizenRepository: state.citizenRepository)
 		)
 
 		super.init(navigation: navigation, presenter: homePresenter)
@@ -43,8 +43,12 @@ class HomeWireframe: ObservableViewWireframe<HomePresenter> {
 }
 
 extension HomeWireframe: HomeNavigation {
-	func presentCitizenDetail(citizen: CitizenToDisplay) {
-		let citizenDetailWireframe = CitizenDetailWireframe (navigation: navigation, citizen: citizen)
+	func presentCitizenDetail(citizen: Citizen, citizenRepository: CitizenRepository) {
+		let citizenDetailWireframe = CitizenDetailWireframe (
+			navigation: navigation,
+			citizen: citizen,
+			citizenRepository: citizenRepository
+		)
 		try? citizenDetailWireframe.push(inWireframe: self)
 	}
 }

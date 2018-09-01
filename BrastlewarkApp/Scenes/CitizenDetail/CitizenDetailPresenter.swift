@@ -10,19 +10,24 @@ import Foundation
 import RxSwift
 
 class CitizenDetailPresenter: ObserverPresenter {
-	let citizen : CitizenToDisplay
+	let citizen : Citizen
 	let view : CitizenDetailView
+	let genderInteractor: GetGenderInteractor
 
 	init(
-		citizen: CitizenToDisplay,
-		view: CitizenDetailView
-		) {
+		citizen: Citizen,
+		view: CitizenDetailView,
+		genderInteractor: GetGenderInteractor
+	) {
 		self.view = view
 		self.citizen = citizen
+		self.genderInteractor = genderInteractor
 	}
 
 	override func subscribeToViewEvents() {
-		view.setCitizenInformation(citizen)
+		var citizenToDisplay = CitizenToDisplay(citizen: citizen)
+		citizenToDisplay.gender = genderInteractor.calculateGender(for: citizen)
+		view.setCitizenInformation(citizenToDisplay)
 	}
 }
 

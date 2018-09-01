@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5542E9BF2131F7EA00DB113B"
+               BuildableName = "BrastlewarkAppTests.xctest"
+               BlueprintName = "BrastlewarkAppTests"
+               ReferencedContainer = "container:BrastlewarkApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

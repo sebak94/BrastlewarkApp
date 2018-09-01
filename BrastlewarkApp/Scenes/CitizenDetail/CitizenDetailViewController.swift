@@ -13,9 +13,6 @@ protocol CitizenDetailView {
 	func setCitizenInformation( _ citizen: CitizenToDisplay )
 }
 
-//	I decided to use a scroll view so i could show the image full size, and still display
-//	the information in a nice size. I placed the image at the bottom because if the image was
-//	first, citizen information was at the bottom of the scroll view and the user could miss it.
 class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 
 	@IBOutlet weak var friendsViewTopConstraint: NSLayoutConstraint!
@@ -33,6 +30,7 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 	@IBOutlet weak var basicInfoView: UIView!
 	@IBOutlet weak var friendsView: UIView!
 	@IBOutlet weak var hairColorView: UIView!
+	@IBOutlet weak var genderLabel: UILabel!
 	
 	var originalImageView : UIImageView?
 	
@@ -46,6 +44,7 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 		setFriends(citizen.friends)
 		setHairColor(citizen.hairColor)
 		setupBackgroundViews()
+		genderLabel.text = citizen.genderDescription
 	}
 
 	func setHairColor(_ color: UIColor) {

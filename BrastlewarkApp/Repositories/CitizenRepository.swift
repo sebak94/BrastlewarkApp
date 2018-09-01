@@ -22,6 +22,9 @@ struct CitizenRepository {
 	var citizens : [Citizen]
 }
 
+// I would prefer to do this against a web service, getting the citizens and filtering too.
+// This way i could get them paginated, and implement pagination in the collection view to ensure
+// its allways scrolling smooth. With the data provided it's still not necessary.
 extension CitizenRepository {
 	func filter(by filters: [Filter]) -> [Citizen] {
 		var result = citizens
@@ -62,10 +65,5 @@ extension CitizenRepository {
 					$0.friends.filter({ $0.containsIgnoringCase(friend) }).count > 0
 				})
 		}
-	}
-
-	func getAllHairColors() -> [String] {
-		let hairColorsArray = citizens.map({$0.hairColor})
-		return Array(Set(hairColorsArray))
 	}
 }

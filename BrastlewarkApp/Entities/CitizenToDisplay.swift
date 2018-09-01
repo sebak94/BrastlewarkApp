@@ -10,19 +10,27 @@ import Foundation
 import UIKit
 
 struct CitizenToDisplay {
-	var hairColor: UIColor
-	var age: String
+	let id: Int
+	let hairColor: UIColor
+	let age: String
 	let name: String
 	let imageURL: URL
 	let weight: String
 	let height: String
 	let professions: String
 	let friends: String
+	var gender: CitizenGender? {
+		didSet {
+			genderDescription = gender?.rawValue ?? "Unknown"
+		}
+	}
+	var genderDescription : String?
 }
 
 extension CitizenToDisplay {
 
 	init (citizen: Citizen) {
+		self.id = citizen.id
 		self.hairColor = CitizenToDisplay.hairColorForCitizen(citizen)
 		self.age = citizen.age.description
 		self.name = citizen.name
@@ -43,5 +51,13 @@ extension CitizenToDisplay {
 		]
 
 		return hairColors [citizen.hairColor] ?? #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+	}
+}
+
+extension Array where Element == Citizen {
+	func toDisplay() -> [CitizenToDisplay] {
+		return self.map({
+			return CitizenToDisplay(citizen: $0)
+		})
 	}
 }

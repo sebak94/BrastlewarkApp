@@ -28,6 +28,8 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 project.xcworkspace/
+xcuserdata/
+*.xcuserstate
 
 ## Other
 *.moved-aside
