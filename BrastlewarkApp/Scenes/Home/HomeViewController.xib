@@ -61,7 +61,7 @@ matching your filters.</string>
                 <constraint firstItem="juW-6U-WUg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UYA-5L-W2R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="juW-6U-WUg" secondAttribute="trailing" id="VDe-ni-pIt"/>
                 <constraint firstItem="hMK-LE-KAM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eXa-Tz-8iI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hMK-LE-KAM" secondAttribute="bottom" id="hBq-hX-hnv"/>
+                <constraint firstAttribute="bottom" secondItem="hMK-LE-KAM" secondAttribute="bottom" id="hBq-hX-hnv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hMK-LE-KAM" secondAttribute="trailing" id="sRu-0l-hW3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
