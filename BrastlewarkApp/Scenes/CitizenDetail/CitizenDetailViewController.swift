@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 protocol CitizenDetailView {
-	func setCitizenInformation( _ citizen: Citizen )
+	func setCitizenInformation( _ citizen: CitizenToDisplay )
 }
 
 //	I decided to use a scroll view so i could show the image full size, and still display
@@ -25,7 +25,6 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 	@IBOutlet weak var citizenImageViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var friendsLabel: UILabel!
 	@IBOutlet weak var professionsLabel: UILabel!
-	@IBOutlet weak var hairColorLabel: UILabel!
 	@IBOutlet weak var weightLabel: UILabel!
 	@IBOutlet weak var heightLabel: UILabel!
 	@IBOutlet weak var ageLabel: UILabel!
@@ -33,20 +32,25 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 	@IBOutlet weak var professionsView: UIView!
 	@IBOutlet weak var basicInfoView: UIView!
 	@IBOutlet weak var friendsView: UIView!
-
+	@IBOutlet weak var hairColorView: UIView!
+	
 	var originalImageView : UIImageView?
 	
-	func setCitizenInformation(_ citizen: Citizen) {
+	func setCitizenInformation(_ citizen: CitizenToDisplay) {
 		navigationItem.title = citizen.name
-		friendsLabel.text = citizen.friends.joined(separator: ", ")
-		hairColorLabel.text = citizen.hairColor
-		weightLabel.text = citizen.weight.description(decimalPlaces: 2)
-		heightLabel.text = citizen.height.description(decimalPlaces: 2)
-		ageLabel.text = citizen.age.description
+		weightLabel.text = citizen.weight
+		heightLabel.text = citizen.height
+		ageLabel.text = citizen.age
 		setCitizenImage(url: citizen.imageURL)
 		setProfessions(citizen.professions)
 		setFriends(citizen.friends)
+		setHairColor(citizen.hairColor)
 		setupBackgroundViews()
+	}
+
+	func setHairColor(_ color: UIColor) {
+		hairColorView.layer.cornerRadius = 4
+		hairColorView.backgroundColor = color
 	}
 
 	func setupBackgroundViews() {
@@ -55,7 +59,7 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 		professionsView.layer.cornerRadius = 20
 	}
 
-	func setProfessions(_ professions: [String]) {
+	func setProfessions(_ professions: String) {
 		guard professions.count > 0 else {
 			professionsLabel.isHidden = true
 			professionsTitleLabel.isHidden = true
@@ -63,18 +67,18 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 			friendsViewTopConstraint.constant = -90
 			return
 		}
-		professionsLabel.text = professions.joined(separator: " | ")
+		professionsLabel.text = professions
 	}
 
-	func setFriends(_ friends: [String]) {
+	func setFriends(_ friends: String) {
 		guard friends.count > 0 else {
 			friendsLabel.isHidden = true
 			friendsTitleLabel.isHidden = true
 			friendsView.isHidden = true
-			citizenImageViewTopConstraint.constant = -60
+			citizenImageViewTopConstraint.constant = -90
 			return
 		}
-		friendsLabel.text = friends.joined(separator: " | ")
+		friendsLabel.text = friends
 	}
 
 	func setCitizenImage( url: URL ) {

@@ -37,7 +37,7 @@ class CitizenDetailPresenterTests: QuickSpec {
 		CitizenDetailPresenter, CitizenDetailViewMock
 		) {
 			let view = CitizenDetailViewMock()
-			let presenter = CitizenDetailPresenter(citizen: CitizenFactory.citizen(), view: view)
+			let presenter = CitizenDetailPresenter(citizen: CitizenToDisplay(citizen:CitizenFactory.citizen()), view: view)
 
 			return (presenter, view)
 	}
@@ -46,7 +46,7 @@ class CitizenDetailPresenterTests: QuickSpec {
 // MARK: Mocks
 class CitizenDetailViewMock: CitizenDetailView {
 	var setCitizenInformationWasCalled = false
-	func setCitizenInformation(_ citizen: Citizen) {
+	func setCitizenInformation(_ citizen: CitizenToDisplay) {
 		setCitizenInformationWasCalled = true
 	}
 }

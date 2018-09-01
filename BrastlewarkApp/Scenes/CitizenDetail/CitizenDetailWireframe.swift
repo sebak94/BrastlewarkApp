@@ -11,7 +11,7 @@ import Foundation
 class CitizenDetailWireframe: ObservableViewWireframe<CitizenDetailPresenter> {
 	let citizenDetailPresenter : CitizenDetailPresenter
 
-	required init(navigation: Navigation, citizen: Citizen ) {
+	required init(navigation: Navigation, citizen: CitizenToDisplay ) {
 		let view = CitizenDetailViewController()
 
 		citizenDetailPresenter = CitizenDetailPresenter(

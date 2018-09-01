@@ -10,7 +10,7 @@ import RxCocoa
 import UIKit
 
 class CitizensCollectionView: UICollectionView {
-	var citizens : [Citizen] = []
+	var citizens : [CitizenToDisplay] = []
 
 	let cellIdentifier = "CitizenCell"
 
@@ -24,7 +24,7 @@ class CitizensCollectionView: UICollectionView {
 		)
 	}
 
-	var selectedCitizenObservable: Observable<Citizen> {
+	var selectedCitizenObservable: Observable<CitizenToDisplay> {
 		return self.rx.itemSelected.asObservable()
 			.map { indexPath in
 				self.citizens[indexPath.row]

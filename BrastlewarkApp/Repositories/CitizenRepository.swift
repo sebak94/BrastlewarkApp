@@ -63,4 +63,9 @@ extension CitizenRepository {
 				})
 		}
 	}
+
+	func getAllHairColors() -> [String] {
+		let hairColorsArray = citizens.map({$0.hairColor})
+		return Array(Set(hairColorsArray))
+	}
 }

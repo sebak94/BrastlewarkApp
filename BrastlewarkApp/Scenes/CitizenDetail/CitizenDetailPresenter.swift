@@ -10,11 +10,11 @@ import Foundation
 import RxSwift
 
 class CitizenDetailPresenter: ObserverPresenter {
-	let citizen : Citizen
+	let citizen : CitizenToDisplay
 	let view : CitizenDetailView
 
 	init(
-		citizen: Citizen,
+		citizen: CitizenToDisplay,
 		view: CitizenDetailView
 		) {
 		self.view = view

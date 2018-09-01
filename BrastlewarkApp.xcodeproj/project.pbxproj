@@ -52,6 +52,7 @@
 		5542EA332133883C00DB113B /* CitizenDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5542EA312133883C00DB113B /* CitizenDetailViewController.xib */; };
 		5542EA352133A9CF00DB113B /* CitizenDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA342133A9CF00DB113B /* CitizenDetailPresenterTests.swift */; };
 		5542EA372133AABA00DB113B /* CitizenDetailWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */; };
+		555788DC213AF5E200640DA0 /* CitizenToDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555788DB213AF5E200640DA0 /* CitizenToDisplay.swift */; };
 		556D87DF2136110800AAA1F7 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87DE2136110800AAA1F7 /* StringHelper.swift */; };
 		556D87E22136117800AAA1F7 /* CitizenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */; };
 		556D87E9213655B000AAA1F7 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87E7213655B000AAA1F7 /* FilterViewController.swift */; };
@@ -123,6 +124,7 @@
 		5542EA312133883C00DB113B /* CitizenDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitizenDetailViewController.xib; sourceTree = "<group>"; };
 		5542EA342133A9CF00DB113B /* CitizenDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenDetailPresenterTests.swift; sourceTree = "<group>"; };
 		5542EA362133AABA00DB113B /* CitizenDetailWireframeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenDetailWireframeTests.swift; sourceTree = "<group>"; };
+		555788DB213AF5E200640DA0 /* CitizenToDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenToDisplay.swift; sourceTree = "<group>"; };
 		556D87DE2136110800AAA1F7 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenRepositoryTests.swift; sourceTree = "<group>"; };
 		556D87E7213655B000AAA1F7 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				5542E9DE213200DD00DB113B /* Citizen.swift */,
+				555788DB213AF5E200640DA0 /* CitizenToDisplay.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				5542EA1B21335D0800DB113B /* HomeViewController.swift in Sources */,
 				5542EA2D213387EC00DB113B /* CitizenDetailWireframe.swift in Sources */,
 				5542E9DF213200DD00DB113B /* Citizen.swift in Sources */,
+				555788DC213AF5E200640DA0 /* CitizenToDisplay.swift in Sources */,
 				556D87DF2136110800AAA1F7 /* StringHelper.swift in Sources */,
 				5542E9FB213238C800DB113B /* SplashViewController.swift in Sources */,
 				5542E9F02132373100DB113B /* Navigation.swift in Sources */,

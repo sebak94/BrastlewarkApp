@@ -29,7 +29,7 @@ class HomePresenter: ObserverPresenter {
 	override func subscribeToViewEvents() {
 		subscribeToCitizenSelectedObservable()
 		subscribeToFilterAppliedObservable()
-		view.setCitizens(state.citizenRepository.citizens)
+		view.setCitizens(state.citizenRepository.citizens.map({CitizenToDisplay(citizen: $0)}))
 		setupFilterViewRanges()
 	}
 
@@ -77,6 +77,6 @@ class HomePresenter: ObserverPresenter {
 
 	func applyFilters(_ filters: [Filter]) {
 		let filteredCitizens = state.citizenRepository.filter(by: filters)
-		view.setCitizens(filteredCitizens)
+		view.setCitizens(filteredCitizens.map({CitizenToDisplay(citizen: $0)}))
 	}
 }

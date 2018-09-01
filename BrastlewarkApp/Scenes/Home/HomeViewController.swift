@@ -12,7 +12,7 @@ import RxCocoa
 import SideMenu
 
 protocol HomeView {
-	func setCitizens( _ citizens: [Citizen] )
+	func setCitizens( _ citizens: [CitizenToDisplay] )
 	func setRanges(
 		ageMax: Float,
 		ageMin: Float,
@@ -24,7 +24,7 @@ protocol HomeView {
 }
 
 protocol HomeViewEventsEmitter {
-	var citizenSelectedObservable: Observable<Citizen> { get }
+	var citizenSelectedObservable: Observable<CitizenToDisplay> { get }
 	var filterAppliedObservable: Observable<[Filter]> { get }
 }
 
@@ -37,7 +37,7 @@ class HomeViewController:
 	@IBOutlet weak var citizensCollectionView: CitizensCollectionView!
 	@IBOutlet weak var emptyView: UIView!
 
-	var citizenSelectedObservable: Observable<Citizen> {
+	var citizenSelectedObservable: Observable<CitizenToDisplay> {
 		return citizensCollectionView.selectedCitizenObservable
 	}
 
@@ -105,7 +105,7 @@ class HomeViewController:
 		)
 	}
 	
-	func setCitizens( _ citizens: [Citizen] ) {
+	func setCitizens( _ citizens: [CitizenToDisplay] ) {
 		//Shows a view notifying when there were no results
 		emptyView.isHidden = !(citizens.count == 0)
 		citizensCollectionView.citizens = citizens

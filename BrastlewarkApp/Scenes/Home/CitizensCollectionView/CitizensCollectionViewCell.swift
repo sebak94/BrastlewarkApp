@@ -13,7 +13,7 @@ class CitizensCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var citizenImageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 
-	var citizen : Citizen?
+	var citizen : CitizenToDisplay?
 	
 	public func reload() {
 		guard let citizen = citizen else { return }

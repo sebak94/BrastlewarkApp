@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeNavigation: class {
-	func presentCitizenDetail(citizen: Citizen)
+	func presentCitizenDetail(citizen: CitizenToDisplay)
 }
 
 class HomeWireframe: ObservableViewWireframe<HomePresenter> {
@@ -43,7 +43,7 @@ class HomeWireframe: ObservableViewWireframe<HomePresenter> {
 }
 
 extension HomeWireframe: HomeNavigation {
-	func presentCitizenDetail(citizen: Citizen) {
+	func presentCitizenDetail(citizen: CitizenToDisplay) {
 		let citizenDetailWireframe = CitizenDetailWireframe (navigation: navigation, citizen: citizen)
 		try? citizenDetailWireframe.push(inWireframe: self)
 	}

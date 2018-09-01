@@ -38,7 +38,7 @@ class HomePresenterTests: QuickSpec {
 
 			context ("when a citizen is selected") {
 				beforeEach {
-					eventsEmitter.citizenSelectedObserver.onNext(CitizenFactory.citizen())
+					eventsEmitter.citizenSelectedObserver.onNext(CitizenToDisplay(citizen:CitizenFactory.citizen()))
 				}
 				it ("presents citizen detail") {
 					expect(navigation.presentCitizenDetailWasCalledWithCitizen).notTo(beNil())
@@ -75,8 +75,8 @@ class HomePresenterTests: QuickSpec {
 
 // MARK: Mocks
 class HomeNavigationMock: HomeNavigation {
-	var presentCitizenDetailWasCalledWithCitizen : Citizen?
-	func presentCitizenDetail(citizen: Citizen) {
+	var presentCitizenDetailWasCalledWithCitizen : CitizenToDisplay?
+	func presentCitizenDetail(citizen: CitizenToDisplay) {
 		presentCitizenDetailWasCalledWithCitizen = citizen
 	}
 }
@@ -87,8 +87,8 @@ class HomeViewMock: HomeView {
 		setRangesWasCalled = true
 	}
 
-	var citizens : [Citizen]? = nil
-	func setCitizens(_ citizens: [Citizen]) {
+	var citizens : [CitizenToDisplay]? = nil
+	func setCitizens(_ citizens: [CitizenToDisplay]) {
 		self.citizens = citizens
 	}
 }
@@ -98,9 +98,9 @@ class HomeEventsEmitterDouble: HomeViewEventsEmitter {
 	var filterAppliedObserver: AnyObserver<[BrastlewarkApp.Filter]>!
 	private var _filterAppliedObservable: Observable<[BrastlewarkApp.Filter]>!
 
-	var citizenSelectedObservable: Observable<Citizen> { return _citizenSelectedObservable }
-	var citizenSelectedObserver : AnyObserver<Citizen>!
-	private var _citizenSelectedObservable: Observable<Citizen>!
+	var citizenSelectedObservable: Observable<CitizenToDisplay> { return _citizenSelectedObservable }
+	var citizenSelectedObserver : AnyObserver<CitizenToDisplay>!
+	private var _citizenSelectedObservable: Observable<CitizenToDisplay>!
 
 	init () {
 		_citizenSelectedObservable = Observable.create() { observer in
