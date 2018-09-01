@@ -58,9 +58,21 @@ class FilterViewController: UIViewController {
 
 	func setupClearButton() {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(
-			barButtonSystemItem: UIBarButtonSystemItem.trash,
+			title: "Clear",
+			style: .done,
 			target: self,
 			action: #selector(clearTapped)
+		)
+		navigationItem.rightBarButtonItem?
+			.setTitleTextAttributes(
+				[NSAttributedStringKey.font: AppStyle.default.fonts.futura.withSize(13)],
+				for: .normal
+			)
+
+		navigationItem.rightBarButtonItem?
+			.setTitleTextAttributes(
+				[NSAttributedStringKey.font: AppStyle.default.fonts.futura.withSize(13)],
+				for: .selected
 		)
 		navigationItem.rightBarButtonItem?.tintColor = AppStyle.default.colors.foreground
 	}
