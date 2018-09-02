@@ -177,7 +177,8 @@ class FilterViewController: UIViewController {
 	func setupHairColorSelectorView() {
 		guard let hairColors = hairColors else { return }
 		hairColorSelector.setColors(hairColors)
-		hairColorSelectorViewWidthConstaint.constant = (hairColorSelector.frame.height + hairColorSelector.colorStackView.spacing) * CGFloat(hairColors.count)
+		hairColorSelectorViewWidthConstaint.constant = (hairColorSelector.frame.height +
+			hairColorSelector.colorStackView.spacing) * CGFloat(hairColors.count)
 	}
 }
 

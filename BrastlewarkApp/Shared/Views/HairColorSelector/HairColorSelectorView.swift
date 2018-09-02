@@ -73,14 +73,13 @@ class SelectableColorView: UIView {
 	init(frame: CGRect, selected: Bool = false) {
 		isSelected = selected
 		super.init (frame: frame)
-		self.layer.cornerRadius = 5
-		self.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-		setSelection()
+		setupView()
 	}
 
 	init (selected: Bool = false) {
 		isSelected = selected
 		super.init (frame: .zero)
+		setupView()
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -88,8 +87,11 @@ class SelectableColorView: UIView {
 	}
 
 	func setupView() {
+		self.layer.cornerRadius = 5
+		self.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
 		let tapGR = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
 		self.addGestureRecognizer(tapGR)
+		setSelection()
 	}
 
 	@objc func viewTapped() {
