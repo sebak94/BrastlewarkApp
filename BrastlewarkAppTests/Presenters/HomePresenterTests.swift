@@ -34,6 +34,9 @@ class HomePresenterTests: QuickSpec {
 				it("sets filter ranges") {
 					expect(view.setRangesWasCalled).to(beTrue())
 				}
+				it("sets hair colors to filter view") {
+					expect(view.setFilterHairColorsWasCalledWith).notTo(beNil())
+				}
 			}
 
 			context ("when a citizen is selected") {
@@ -88,6 +91,11 @@ class HomeNavigationMock: HomeNavigation {
 }
 
 class HomeViewMock: HomeView {
+	var setFilterHairColorsWasCalledWith: [HairColor]?
+	func setFilterHairColors(_ colors: [HairColor]) {
+		setFilterHairColorsWasCalledWith = colors
+	}
+
 	var setRangesWasCalled = false
 	func setRanges(ageMax: Float, ageMin: Float, heightMax: Float, heightMin: Float, weightMax: Float, weightMin: Float) {
 		setRangesWasCalled = true

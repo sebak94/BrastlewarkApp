@@ -35,6 +35,7 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 	var originalImageView : UIImageView?
 	
 	func setCitizenInformation(_ citizen: CitizenToDisplay) {
+
 		navigationItem.title = citizen.name
 		weightLabel.text = citizen.weight
 		heightLabel.text = citizen.height
@@ -42,7 +43,7 @@ class CitizenDetailViewController: ObservableViewController, CitizenDetailView {
 		setCitizenImage(url: citizen.imageURL)
 		setProfessions(citizen.professions)
 		setFriends(citizen.friends)
-		setHairColor(citizen.hairColor)
+		setHairColor(citizen.hairColor.color())
 		setupBackgroundViews()
 		genderLabel.text = citizen.genderDescription
 	}

@@ -55,6 +55,9 @@
 		555788DC213AF5E200640DA0 /* CitizenToDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555788DB213AF5E200640DA0 /* CitizenToDisplay.swift */; };
 		555788DE213AFDFA00640DA0 /* GetCitizenGenderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555788DD213AFDFA00640DA0 /* GetCitizenGenderInteractor.swift */; };
 		555788E0213B09E700640DA0 /* GetCitizenGenderInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555788DF213B09E700640DA0 /* GetCitizenGenderInteractorTests.swift */; };
+		555788E4213BAADC00640DA0 /* HairColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555788E3213BAADC00640DA0 /* HairColorSelectorView.swift */; };
+		555788E6213BAB2B00640DA0 /* ViewWithXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555788E5213BAB2B00640DA0 /* ViewWithXib.swift */; };
+		555788E9213BAB9400640DA0 /* HairColorSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555788E8213BAB9400640DA0 /* HairColorSelectorView.xib */; };
 		556D87DF2136110800AAA1F7 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87DE2136110800AAA1F7 /* StringHelper.swift */; };
 		556D87E22136117800AAA1F7 /* CitizenRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */; };
 		556D87E9213655B000AAA1F7 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D87E7213655B000AAA1F7 /* FilterViewController.swift */; };
@@ -129,6 +132,9 @@
 		555788DB213AF5E200640DA0 /* CitizenToDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenToDisplay.swift; sourceTree = "<group>"; };
 		555788DD213AFDFA00640DA0 /* GetCitizenGenderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitizenGenderInteractor.swift; sourceTree = "<group>"; };
 		555788DF213B09E700640DA0 /* GetCitizenGenderInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitizenGenderInteractorTests.swift; sourceTree = "<group>"; };
+		555788E3213BAADC00640DA0 /* HairColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairColorSelectorView.swift; sourceTree = "<group>"; };
+		555788E5213BAB2B00640DA0 /* ViewWithXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithXib.swift; sourceTree = "<group>"; };
+		555788E8213BAB9400640DA0 /* HairColorSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HairColorSelectorView.xib; sourceTree = "<group>"; };
 		556D87DE2136110800AAA1F7 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		556D87E12136117800AAA1F7 /* CitizenRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenRepositoryTests.swift; sourceTree = "<group>"; };
 		556D87E7213655B000AAA1F7 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 		5542E9AE2131F7EA00DB113B /* BrastlewarkApp */ = {
 			isa = PBXGroup;
 			children = (
+				555788E1213BAAB700640DA0 /* Shared */,
 				5508ABBC21379A5D006ED7FD /* Styles */,
 				5542E9FD21323C3300DB113B /* States */,
 				5542E9E7213235EA00DB113B /* Navigation */,
@@ -433,6 +440,32 @@
 			path = CitizenDetail;
 			sourceTree = "<group>";
 		};
+		555788E1213BAAB700640DA0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				555788E2213BAAC900640DA0 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		555788E2213BAAC900640DA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				555788E7213BAB7A00640DA0 /* HairColorSelector */,
+				555788E5213BAB2B00640DA0 /* ViewWithXib.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		555788E7213BAB7A00640DA0 /* HairColorSelector */ = {
+			isa = PBXGroup;
+			children = (
+				555788E3213BAADC00640DA0 /* HairColorSelectorView.swift */,
+				555788E8213BAB9400640DA0 /* HairColorSelectorView.xib */,
+			);
+			path = HairColorSelector;
+			sourceTree = "<group>";
+		};
 		556D87E02136116200AAA1F7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +583,7 @@
 			files = (
 				5542E9BA2131F7EA00DB113B /* LaunchScreen.storyboard in Resources */,
 				5542EA28213362D800DB113B /* CitizensCollectionViewCell.xib in Resources */,
+				555788E9213BAB9400640DA0 /* HairColorSelectorView.xib in Resources */,
 				5542EA332133883C00DB113B /* CitizenDetailViewController.xib in Resources */,
 				5542EA1C21335D0800DB113B /* HomeViewController.xib in Resources */,
 				5542E9D92131FE6400DB113B /* BrastlewarkApi.plist in Resources */,
@@ -677,6 +711,7 @@
 				5542E9F22132373100DB113B /* ObservableViewWireframe.swift in Sources */,
 				5542EA1821335CFB00DB113B /* HomePresenter.swift in Sources */,
 				5542E9FF21323C3E00DB113B /* AppState.swift in Sources */,
+				555788E6213BAB2B00640DA0 /* ViewWithXib.swift in Sources */,
 				5542EA2F213387F700DB113B /* CitizenDetailPresenter.swift in Sources */,
 				5542EA1B21335D0800DB113B /* HomeViewController.swift in Sources */,
 				5542EA2D213387EC00DB113B /* CitizenDetailWireframe.swift in Sources */,
@@ -703,6 +738,7 @@
 				5542E9F6213238AB00DB113B /* SplashWireframe.swift in Sources */,
 				5542E9F42132373100DB113B /* ObservableViewController.swift in Sources */,
 				5542E9E22132023700DB113B /* DictionaryHelper.swift in Sources */,
+				555788E4213BAADC00640DA0 /* HairColorSelectorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,18 +33,21 @@ class FilterViewController: UIViewController {
 	@IBOutlet weak var applyView: UIView!
 	@IBOutlet weak var friendTextField: UITextField!
 	@IBOutlet weak var professionTextField: UITextField!
-	@IBOutlet weak var hairColorTextField: UITextField!
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var ageRangeSlider: TTRangeSlider!
 	@IBOutlet weak var heightRangeSlider: TTRangeSlider!
 	@IBOutlet weak var weightRangeSlider: TTRangeSlider!
-
+	@IBOutlet weak var hairColorSelector: HairColorSelectorView!
+	@IBOutlet weak var hairColorSelectorViewWidthConstaint: NSLayoutConstraint!
+	
 	var ageMax: Float?
 	var ageMin: Float?
 	var heightMax: Float?
 	var heightMin: Float?
 	var weightMax: Float?
 	var weightMin: Float?
+
+	var hairColors: [HairColor]?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -54,6 +57,7 @@ class FilterViewController: UIViewController {
 		setupRangeSliders()
 		setupTextFields()
 		setupClearButton()
+		setupHairColorSelectorView()
 	}
 
 	func setupClearButton() {
@@ -82,14 +86,13 @@ class FilterViewController: UIViewController {
 		nameTextField.text = nil
 		professionTextField.text = nil
 		friendTextField.text = nil
-		hairColorTextField.text = nil
+		hairColorSelector.clearSelections()
 	}
 
 	func setupTextFields() {
 		nameTextField.delegate = self
 		professionTextField.delegate = self
 		friendTextField.delegate = self
-		hairColorTextField.delegate = self
 	}
 
 	func setupBackgroundTapGestureRecognizer() {
@@ -101,7 +104,6 @@ class FilterViewController: UIViewController {
 		nameTextField.resignFirstResponder()
 		professionTextField.resignFirstResponder()
 		friendTextField.resignFirstResponder()
-		hairColorTextField.resignFirstResponder()
 	}
 
 	func setupApplyButton() {
@@ -123,7 +125,7 @@ class FilterViewController: UIViewController {
 			Filter.friend(friendTextField.text ?? ""),
 			Filter.profession(professionTextField.text ?? ""),
 			Filter.name(nameTextField.text ?? ""),
-			Filter.hairColor(hairColorTextField.text ?? "")
+			Filter.hairColors(hairColorSelector.getSelectedColors())
 		]
 		delegate?.filtersApplied(with: filters)
 		dismiss(animated: true, completion: nil)
@@ -166,7 +168,19 @@ class FilterViewController: UIViewController {
 		weightRangeSlider.selectedMaximum = weightMax
 		weightRangeSlider.selectedMinimum = weightMin
 	}
+
+
+	func setHairColors(_ colors: [HairColor]) {
+		hairColors = colors
+	}
+
+	func setupHairColorSelectorView() {
+		guard let hairColors = hairColors else { return }
+		hairColorSelector.setColors(hairColors)
+		hairColorSelectorViewWidthConstaint.constant = (hairColorSelector.frame.height + hairColorSelector.colorStackView.spacing) * CGFloat(hairColors.count)
+	}
 }
+
 
 extension FilterViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -34,6 +34,7 @@ class HomePresenter: ObserverPresenter {
 		subscribeToFilterAppliedObservable()
 		view.setCitizens(state.citizenRepository.citizens.toDisplay())
 		setupFilterViewRanges()
+		setupFilterHairColors()
 	}
 
 	func setupFilterViewRanges() {
@@ -62,6 +63,10 @@ class HomePresenter: ObserverPresenter {
 			weightMax: Float(maximumWeight) + 1,
 			weightMin: Float(minimumWeight) - 1
 		)
+	}
+
+	func setupFilterHairColors() {
+		view.setFilterHairColors(state.citizenRepository.getAllHairColors())
 	}
 
 	func subscribeToCitizenSelectedObservable() {

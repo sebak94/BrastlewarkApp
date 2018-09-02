@@ -21,6 +21,7 @@ protocol HomeView {
 		weightMax: Float,
 		weightMin: Float
 	)
+	func setFilterHairColors(_ colors: [HairColor])
 }
 
 protocol HomeViewEventsEmitter {
@@ -129,5 +130,9 @@ class HomeViewController:
 			weightMax: weightMax,
 			weightMin: weightMin
 		)
+	}
+
+	func setFilterHairColors(_ colors: [HairColor]) {
+		filterViewController.setHairColors(colors)
 	}
 }

@@ -26,28 +26,28 @@ class CitizenRepositoryTests: QuickSpec {
 
 			context("when filtering only by haircolor") {
 				it("returns the citizens with that color") {
-					let result = repository.filter(by: [Filter.hairColor("pink")])
+					let result = repository.filter(by: [Filter.hairColors([HairColor.pink("pink", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))])])
 					expect(result.count) == 2
 				}
 			}
 
 			context("when filtering by haircolor and name") {
 				it("returns only the citizen that satisfies both filters") {
-					let result = repository.filter(by: [Filter.name("for"),Filter.hairColor("pink")])
+					let result = repository.filter(by: [Filter.name("for"), Filter.hairColors([HairColor.pink("pink", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))])])
 					expect(result.count) == 1
 				}
 			}
 
 			context("when filtering by haircolor and age") {
 				it("returns only the citizen that satisfies both filters") {
-					let result = repository.filter(by: [Filter.ageRange([1,200]),Filter.hairColor("pink")])
+					let result = repository.filter(by: [Filter.ageRange([1,200]),Filter.hairColors([HairColor.pink("pink", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))])])
 					expect(result.count) == 1
 				}
 			}
 
 			context("when filtering with three filters") {
 				it("returns only the citizen that satisfies both filters") {
-					let result = repository.filter(by: [Filter.name("test"),Filter.ageRange([1,1000]),Filter.hairColor("pink")])
+					let result = repository.filter(by: [Filter.name("test"),Filter.ageRange([1,1000]),Filter.hairColors([HairColor.pink("pink", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))])])
 					expect(result.count) == 2
 				}
 			}
@@ -97,45 +97,31 @@ class CitizenRepositoryTests: QuickSpec {
 			}
 		}
 
-		describe("filter by name") {
+		describe("filter by hair color") {
 
 			let citizens = [
-				CitizenFactory.citizen(hairColor: "Test Name 1"),
-				CitizenFactory.citizen(hairColor: "Name for test 2"),
+				CitizenFactory.citizen(hairColor: "Pink"),
+				CitizenFactory.citizen(hairColor: "Red"),
 				]
 			let repository = CitizenRepository(citizens: citizens)
 
 			context("when filter is called with a query contained in one citizen") {
 				it("returns only that citizen") {
-					let result = repository.filterCitizens(citizens, by: .hairColor("for"))
-					expect(result.first!.hairColor) == citizens[1].hairColor
+					guard let result = repository.filterCitizens(citizens, by: .hairColors([HairColor.pink("Pink", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))])).first else { fail();return }
+					expect(result.hairColor) == citizens[0].hairColor
 				}
 			}
 
 			context("when filter is called with a query contained in none of the citizens") {
 				it("returns no citizens") {
-					let result = repository.filterCitizens(citizens, by: .hairColor("qwerqwer"))
+					let result = repository.filterCitizens(citizens, by: .hairColors([HairColor.pink("Black", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))]))
 					expect(result.isEmpty).to(beTrue())
 				}
 			}
 
-			context("when filter is called with a query contained in both citizens") {
-				it("returns both citizens") {
-					let result = repository.filterCitizens(citizens, by: .hairColor("Name"))
-					expect(result.count) == 2
-				}
-			}
-
-			context("when filter is called with a query contained in both citizens but with different casing") {
-				it("returns both citizens") {
-					let result = repository.filterCitizens(citizens, by: .hairColor("test"))
-					expect(result.count) == 2
-				}
-			}
-
-			context("when filter is called with a query contained in both citizens ") {
-				it("returns both citizens") {
-					let result = repository.filterCitizens(citizens, by: .hairColor(" "))
+			context("when filter is called with a query contained in none of the citizens") {
+				it("returns no citizens") {
+					let result = repository.filterCitizens(citizens, by: .hairColors([HairColor.pink("Pink", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)),HairColor.pink("Red", #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))]))
 					expect(result.count) == 2
 				}
 			}
